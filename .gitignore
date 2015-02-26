@@ -1,0 +1,6 @@
+css/*.min.css
+js/*.min.js
+build/jsbuild.php
+build/cssbuild.php
+
+node_modules/

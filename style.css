@@ -1,0 +1,22 @@
+/*
+ * Theme Name: Skrollr
+ * Theme URI: http://skrollr.1nterval.com
+ * Author: Fabien Quatravaux
+ * Author URI: http://fab1en.github.io
+ * Description: A WordPress theme to tell stories with Skrollr js library. Do you have a story to tell ? Or a multimedia report to publish ? Or a long form article to lay-out ? This natural-scrolling theme is the one you need. Its native navigation on mobile let user scroll you content with their finger. No click or tap is needed to view the content.
+ * Version: 1.0
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Tags: one-column, light, responsive-layout, custom-colors, custom-menu, post-formats, translation-ready
+ * Text Domain: skrollr
+ */
+ 
+/*
+ * This theme follows SMACSS guideline http://smacss.com/book/categorizing
+ * All CSS rules are located into the following files :
+ *  # css/base.css : the defaults
+ *  # css/layout.css : major components
+ *  # css/module.css : discrete components
+ *  # css/state.css : augments and overrides all other styles
+ *  # css/theme.css : specific look and feel
+ */

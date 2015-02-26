@@ -1,0 +1,32 @@
+{
+	"name": "skrollr",
+	"title": "Skrollr",
+	"description": "A WordPress theme to tell stories with Skrollr js library",
+	"version": "1.0.0",
+	"author": {
+		"name": "Fabien Quatravaux",
+		"email": "fabien.quatravaux@1nterval.com",
+		"url": "http://fab1en.github.io/"
+	},
+	"homepage": "http://skrollr.1nterval.com",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/1nterval/skrollr"
+	},
+	"keywords": [
+		"skrollr",
+		"raconter",
+		"histoire",
+		"wordpress",
+		"theme"
+	],
+	"devDependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-clean": "~0.6.0",
+		"grunt-contrib-cssmin": "~0.6.0",
+		"grunt-contrib-uglify": "~0.1.1",
+		"grunt-md5": "~0.1.11",
+		"matchdep": "~0.1.2"
+	},
+	"license": "GPL-2.0+"
+}

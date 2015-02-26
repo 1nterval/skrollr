@@ -1,0 +1,359 @@
+/*! modules.css */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Skrollr
+   ========================================================================== */
+
+html.skrollr, .skrollr body {
+	padding:0;
+	margin:0;
+}
+
+.skrollable {
+	/*
+	 * First-level skrollables are positioned relative to window
+	 */
+	position:fixed;
+
+	/*
+	 * Skrollables by default have a z-index of 100 in order to make it easy to position elements in front/back without changing each skrollable
+	 */
+	z-index:100;
+}
+
+.skrollr-mobile .skrollable {
+	/*
+		May cause issues on Android default browser (see #331 on GitHub).
+	*/
+	position:absolute;
+	z-index: -1;
+}
+
+.skrollable .skrollable {
+	/*
+	 * Second-level skrollables are positioned relative their parent skrollable
+	 */
+	position:absolute;
+}
+
+.skrollable .skrollable .skrollable {
+	/*
+	 * Third-level (and below) skrollables are positioned static
+	 */
+	position:static;
+}
+
+/* ==========================================================================
+   WordPress styles
+   ========================================================================== */
+
+.alignleft {
+	float: left;
+	margin: 1em 1em 1em 0;
+}
+
+.alignright {
+	float: right;
+	margin: 1em 0 1em 1em;
+}
+
+.aligncenter {
+	display: block;
+	margin: 0 auto;
+}
+
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail,
+.alignleft,
+.alignright,
+.aligncenter,
+.alignnone,
+.wp-caption > img {
+	max-width: 100%;
+	height: auto;
+}
+
+.one-column img.size-full,
+.one-column img.size-large,
+.one-column img.size-medium {
+	max-width: 100%;
+	max-width: calc(100% - 28px);
+	height: auto;
+}
+
+.wp-caption {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.gallery-caption {}
+.sticky {}
+.bypostauthor {}
+
+#comment {
+	max-width: 100%;
+}
+
+/* ==========================================================================
+   Icomoon
+   ========================================================================== */
+
+@font-face {
+	font-family: 'Icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icons:before {
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'Icomoon';
+	font-weight: normal;
+	vertical-align: top;
+}
+
+.icomoon-home:before {
+	content: "h";
+}
+
+.icomoon-facebook:before {
+	content: "f";
+}
+
+.icomoon-twitter:before {
+	content: "t";
+}
+
+.icomoon-menu:before {
+	content: "M";
+}
+
+.icomoon-down-arrow:before {
+	content: "\2193";
+}
+
+.icomoon-edit:before {
+	content: "E";
+}
+
+/* ==========================================================================
+   MediaElement Player
+   ========================================================================== */
+.mejs-container .mejs-controls {
+	height: 15px;
+	background: transparent;
+}
+
+.mejs-controls div.mejs-time-rail {
+	height: 15px;
+	padding-top: 0;
+}
+
+.mejs-controls .mejs-time-rail span {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	height: 15px;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-total {
+	height: 15px;
+	background: transparent;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-loaded {
+	height: 1px;
+	margin-top: 5px;
+}
+
+.mejs-overlay-button {
+	background: url(../img/bigplay.svg) no-repeat;
+	background-size: cover;
+}
+
+.mejs-overlay-loading {
+	background: none;
+}
+
+@media (min-width: 768px) {
+	.mejs-overlay-loading {
+		width: 400px;
+		height: 400px;
+		margin: -200px 0 0 -200px;
+	}
+
+	.mejs-overlay-loading > span {
+		width: 400px;
+		height: 400px;
+	}
+
+	.mejs-overlay-button {
+		width: 500px;
+		height: 500px;
+		margin: -250px 0 0 -250px;
+	}
+
+	.mejs-overlay:hover .mejs-overlay-button {
+		background-position: 0 -500px;
+	}
+}
+
+.mejs-overlay-loading > span {
+	background: url(../img/loading.svg) 50% 50% no-repeat;
+	background-size: cover;
+
+	-webkit-animation: rotation linear 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-transform-origin: 50% 50%;
+	-moz-animation: rotation linear 1s;
+	-moz-animation-iteration-count: infinite;
+	-moz-transform-origin: 50% 50%;
+	-o-animation: rotation linear 1s;
+	-o-animation-iteration-count: infinite;
+	-o-transform-origin: 50% 50%;
+	-ms-animation: rotation linear 1s;
+	-ms-animation-iteration-count: infinite;
+	-ms-transform-origin: 50% 50%;
+	animation: rotation linear 1s;
+	animation-iteration-count: infinite;
+	ransform-origin: 50% 50%;
+}
+
+@-webkit-keyframes rotation {
+	from { -webkit-transform: rotate(0deg); }
+	to { -webkit-transform: rotate(180deg); }
+}
+
+@-moz-keyframes rotation {
+	from { -moz-transform: rotate(0deg); }
+	to { -moz-transform: rotate(180deg); }
+}
+
+@-o-keyframes rotation {
+	from { -o-transform: rotate(0deg); }
+	to { -o-transform: rotate(180deg); }
+}
+
+@-ms-keyframes rotation {
+	from { -ms-transform: rotate(0deg); }
+	to { -ms-transform: rotate(180deg); }
+}
+
+@keyframes rotation {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(180deg); }
+}
+
+/* ==========================================================================
+   SlabText https://github.com/freqDec/slabText/
+   ========================================================================== */
+
+.slabtexted .slabtext {
+	display:-moz-inline-box;
+	display:inline-block;
+	white-space:nowrap;
+}
+
+.slabtextinactive .slabtext {
+	display:inline;
+	white-space:normal;
+	font-size:1em !important;
+	letter-spacing:inherit !important;
+	word-spacing:inherit !important;
+	*letter-spacing:0 !important;
+	*word-spacing:0 !important;
+}
+
+.slabtextdone .slabtext {
+	display:block;
+}

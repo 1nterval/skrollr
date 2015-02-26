@@ -1,0 +1,197 @@
+# Copyright (C) 2015 Fabien Quatravaux
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skrollr 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/skrollr\n"
+"POT-Creation-Date: 2015-04-24 16:00:24+00:00\n"
+"PO-Revision-Date: 2015-04-24 18:01+0100\n"
+"Last-Translator: Fabien Quatravaux <fabien.quatravaux@1nterval.com>\n"
+"Language-Team: Fabien Quatravaux <fabien.quatravaux@1nterval.com>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#: comments.php:5
+msgid "One Response to %2$s"
+msgid_plural "%1$s Responses to %2$s"
+msgstr[0] "Une réponse à %2$s"
+msgstr[1] "%1$s réponses à %2$s"
+
+#: inc/content_colors/register.php:46
+msgid "Background color"
+msgstr "Couleur de fond"
+
+#: inc/content_colors/register.php:51
+msgid "Background active color"
+msgstr "Couleur de fond état actif"
+
+#: inc/content_colors/register.php:56
+msgid "Text color"
+msgstr "Couleur de texte"
+
+#: inc/footermenu.php:17
+msgid "Footer menu"
+msgstr "Menu du pied de page"
+
+#: inc/header_background/register.php:48
+msgid "Magic Book"
+msgstr "Livre de magie"
+
+#: inc/layout/register.php:30
+msgid "Page layout"
+msgstr "Agencement de la page"
+
+#: inc/layout/register.php:39
+msgid "Footer menu layout"
+msgstr "Disposition du menu de bas de page"
+
+#: inc/layout/register.php:44
+msgid "Left column"
+msgstr "Colonne de gauche"
+
+#: inc/layout/register.php:45
+msgid "Right column"
+msgstr "Colonne de droite"
+
+#: inc/layout/register.php:55
+msgid "Content width"
+msgstr "Largeur du contenu"
+
+#: inc/layout/register.php:71
+msgid "Homescreen logo"
+msgstr "Logo sur l'écran d'accueil"
+
+#: inc/layout/register.php:81
+msgid "URL pointed by logo"
+msgstr "Adresse pointée par le logo"
+
+#: inc/layout/register.php:91
+msgid "Logo position"
+msgstr "Position du logo"
+
+#: inc/navmenu/register.php:16
+msgid "Main navigation menu"
+msgstr "Menu de navigation principal"
+
+#: inc/navmenu/register.php:168
+msgid "Menu top logo"
+msgstr "Logo dans le menu"
+
+#: inc/metadata.php:38
+msgid "Uncategorized"
+msgstr "Non classé"
+
+#: inc/metadata.php:42
+msgid "Categories: "
+msgstr "Categories: "
+
+#: inc/metadesc/register.php:41
+msgid "Meta description"
+msgstr "Meta description"
+
+#: inc/metadesc/register.php:85
+msgid ""
+"Sorry, but the page you were trying to view does not exist. \n"
+"\n"
+"It looks like this was the result of either a mistyped address or an out-of-"
+"date link."
+msgstr ""
+"Désolé, mais la page que vous essayez de voir n'existe pas.\n"
+"\n"
+"Il semble que cela est du soit à une adresse mal tapée, soit à un lien "
+"périmé."
+
+#: inc/metadesc/register.php:93
+msgid "Nothing found"
+msgstr "Rien n'a été trouvé"
+
+#: inc/metadesc/register.php:95
+msgid "One post found."
+msgid_plural "%d posts found"
+msgstr[0] "Un article trouvé."
+msgstr[1] "%d articles trouvés"
+
+#: inc/metadesc/register.php:105
+msgid "404, Page not found"
+msgstr "404, Page non trouvée"
+
+#: inc/metadesc/register.php:111
+msgid "Search results for \"%s\""
+msgstr "Résultats de recherche pour \"%s\""
+
+#: inc/shortcodes.php:52
+msgid "Gallery Settings"
+msgstr "Réglages de la galerie"
+
+#: inc/shortcodes.php:56
+msgid "Gallery type"
+msgstr "Type de galerie"
+
+#: inc/shortcodes.php:60
+msgid "Melded"
+msgstr "Fondu"
+
+#: inc/shortcodes.php:63
+msgid "Rolling up"
+msgstr "Déroulé de bas en haut"
+
+#: inc/shortcodes.php:66
+msgid "Rolling down"
+msgstr "Déroulé de haut en bas"
+
+#: inc/shortcodes.php:69
+msgid "Shutter"
+msgstr "Volet"
+
+#: templates/block-gallery.php:28 templates/block-video.php:2
+#: templates/block.php:17
+msgid "Edit"
+msgstr "Modifier"
+
+#: templates/chapo.php:12
+msgid "Read next ..."
+msgstr "Lire la suite ..."
+
+#: templates/chapo.php:13
+msgid "go down to start"
+msgstr "descendez pour commencer"
+
+#. Theme Name of the plugin/theme
+msgid "Skrollr"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://skrollr.1nterval.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A WordPress theme to tell stories with Skrollr js library. Do you have a "
+"story to tell ? Or a multimedia report to publish ? Or a long form article "
+"to lay-out ? This natural-scrolling theme is the one you need. Its native "
+"navigation on mobile let user scroll you content with their finger. No click "
+"or tap is needed to view the content."
+msgstr ""
+"Un thème WordPress pour raconter des histoires avec la librairie JS Skrollr. "
+"Une histoire à raconter ? Un reportage multimédia à publier ? Un article "
+"long format à mettre en page ? Ce thème utilisant le défilement naturel du "
+"navigateur est l'idéal. Il propose également une navigation native sur "
+"mobile en faisant défiler le contenu avec le doigt."
+
+#. Author of the plugin/theme
+msgid "Fabien Quatravaux"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://fab1en.github.io"
+msgstr ""
+
+#~ msgid "Title font"
+#~ msgstr "Police du titre"
+
+#~ msgid "Title width"
+#~ msgstr "Largeur du titre"

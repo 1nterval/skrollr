@@ -1,0 +1,450 @@
+/*! layout.css */
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.block-0 {
+	background-size:cover;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-position:50%;
+	overflow:hidden;
+}
+
+.block-0 > h1 {
+	text-align:center;
+}
+
+.logo-header {
+	position: absolute;
+	top: 1%;
+	right: 1%;
+}
+
+.partage {
+	position: fixed;
+	z-index: 500;
+	right: 10px;
+	top: 10px;
+	display: none;
+}
+
+.partage > a {
+	display: block;
+	font-size: 1.5em;
+	width: 1em;
+	height: 1.3em;
+	height: 3ex;
+}
+
+.scrolldown {
+	position: absolute;
+	bottom: 10%;
+	width: 100%;
+	text-align: center;
+	z-index: 150;
+}
+
+.scrolldown:after {
+	content: '';
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	left: 50%;
+	margin-left: -30px;
+
+	border-style: none solid solid none;
+	border-width: 1px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.scrolldown:hover:after {
+	-moz-animation-duration: 1s;
+	-moz-animation-name: movedown;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: alternate;
+
+	-webkit-animation-duration: 1s;
+	-webkit-animation-name: movedown;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+
+	animation-duration: 1s;
+	animation-name: movedown;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@-moz-keyframes movedown {
+	from { top: 0; }
+	to { top: 5px; }
+}
+
+@-webkit-keyframes movedown {
+	from { top: 0; }
+	to { top: 5px; }
+}
+
+@keyframes movedown {
+	from { top: 0; }
+	to { top: 5px; }
+}
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.block, #chapo {
+	position: relative;
+	z-index: 200;
+}
+
+.block {
+	width: 100%;
+}
+
+.block.video, .block.gallery {
+	background: transparent;
+}
+
+blockquote {
+	position: relative;
+	margin: 2em 1.5em;
+}
+
+blockquote > p:before {
+	content: '\00ab'; /* left angle quotation mark */
+	position: absolute;
+	left: 0;
+	top: -0.1em;
+	margin: -0.5em 0 0 -0.6em;
+}
+
+blockquote > p:after {
+	content: '\00bb'; /* right angle quotation mark */
+	display: inline-block;
+	line-height: 0.33em;
+	position: relative;
+	top: 0.15em;
+	margin: -1em 0 0 0.15em;
+}
+
+.sk-gallery {
+	width: 100%;
+}
+
+.sk-gallery > figure {
+	background-size:cover;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-position:50%;
+	width: 100%;
+}
+
+.sk-gallery > figure.move-up,
+.sk-gallery > figure.move-down,
+.sk-gallery > figure.volet {
+	position:fixed;
+}
+
+.sk-gallery  figcaption,
+.block.video figcaption {
+	width: 70%;
+	margin: 8% 11%;
+	text-align: center;
+	padding: 2%;
+}
+
+/* 2 columns centered with 5% margin */
+.two-columns {
+	padding: 4em 0;
+}
+
+.two-columns .text-column {
+	position: relative;
+}
+
+/* 1 column with title on the left */
+.one-column {
+	padding: 5em 0;
+}
+
+.one-column .title-column {
+	margin: 1em 0;
+	text-align: right;
+}
+
+
+.the_gallery {
+	clear: both;
+}
+
+.title-column > h2 {
+	position: relative;
+	top: -0.25em;
+	display: inline;
+}
+
+/* ==========================================================================
+   Admin links - customizer
+   ========================================================================== */
+
+.post-edit-link {
+	position: absolute;
+	top: 0.75em;
+	right: 0.75em;
+}
+
+.post-edit-link {
+	width: 1.35em;
+	height: 1.35em;
+	line-height: 1.35em;
+	text-align: center;
+	border: solid 1px;
+	border-radius: 5px;
+	font-size: 2em;
+	cursor: pointer;
+}
+
+/* ==========================================================================
+   Menu
+   ========================================================================== */
+#main-menu {
+	position: fixed;
+	width: 75px;
+	height: 100%;
+	min-height: 400px;
+	z-index: 210;
+	top: 0;
+	left: 0;
+	transition: background-color 500ms;
+	font-size: 1.5em;
+}
+
+@media screen and (max-width: 480px) {
+	#main-menu {
+		display: none;
+	}
+}
+
+#main-menu .menu {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 100%;
+	height: 80%;
+	top: 20%;
+}
+
+#main-menu .menu .nav-item {
+	width: 48px;
+}
+
+#main-menu .menu > .nav-item:first-child {
+	position: absolute;
+	top: 0;
+}
+
+#main-menu .menu > .nav-item:last-child {
+	position: absolute;
+	bottom: 0;
+}
+
+#main-menu-container {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	margin-top: 3em;
+	top: 1px;
+	clip: rect(0px, 1000px, 500px, 0px);
+}
+
+#main-menu dd {
+	display: none;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 73px;
+	padding: 1em;
+	font-size: 1.2em;
+	line-height: 0.55em;
+	border-left: solid 1px;
+}
+
+#main-menu dt {
+	width: 73px;
+	padding: 1em 0;
+	text-align: center;
+	line-height: 1em;
+}
+
+#main-menu.skrollable-between dt {
+	border-bottom-style: none;
+}
+
+#main-menu.active dt,
+#main-menu.skrollable-before dt,
+#main-menu.skrollable-after dt {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+
+#main-menu.active a:first-child dt,
+#main-menu.skrollable-before a:first-child dt,
+#main-menu.skrollable-after a:first-child dt {
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+
+#main-menu .menu a {
+	height: 3em;
+}
+
+#main-menu a:hover dd, #main-menu a:hover dt {
+	display: block!important;
+}
+
+#main-menu.skrollable-before dt, #main-menu.skrollable-after dt,
+#main-menu.active dt, #main-menu.active dt {
+	display: block!important;
+	background: transparent;
+}
+
+#main-menu.active .logo-menu {
+	display: block!important;
+}
+
+#main-menu a {
+	text-decoration: none;
+	display: block;
+	position: relative;
+}
+
+#main-menu .menu a.current {
+	border-left: solid 2px;
+}
+
+#main-menu .menu a.current dt {
+	margin-left: -2px;
+}
+
+#main-menu .menu a.current dd {
+	left: 71px;
+}
+
+#main-menu .logo-menu {
+	width: 32px;
+	height: 32px;
+	margin: 0 21px;
+	position: absolute;
+	top: 1%;
+}
+
+#main-menu:before {
+	margin: 48px 25px 0;
+	text-shadow: black -1px -1px 0px;
+}
+
+/* version étroite du menu */
+#main-menu.thin {
+	width: 50px;
+	font-size: 1em;
+}
+
+#main-menu.thin dd {
+	left: 48px;
+}
+
+#main-menu.thin dt {
+	width: 48px;
+}
+
+#main-menu.thin dl a.current dd {
+	left: 46px;
+}
+
+#main-menu.thin .logo-menu {
+	margin: 0 9px;
+}
+
+#main-menu.thin:before {
+	margin-left: 17px;
+	margin-right: 17px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.page .menu {
+	padding: 0;
+}
+
+.page .sub-menu {
+	margin: 0;
+}
+
+.page .menu .menu-item > a {
+	padding: 1em 0;
+	border-bottom-style: solid;
+	border-width: 1px;
+
+	display: table;
+	width: 100%;
+}
+
+.page .menu .menu-item:first-child > a {
+	border-top-style: solid;
+}
+
+.page .sub-menu .menu-item:first-child > a {
+	border-top-style: none;
+}
+
+.page .menu .menu-item > a .mediahelper_image_link_img {
+	display: table-cell;
+}
+
+.page .menu .menu-item > a .mediahelper_image_text {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 1em;
+	width: 100%;
+}
+
+.pagination .next > a,
+.pagination .prev > a  {
+	display: block;
+	width: 40px;
+	height: 40px;
+	border-width: 1px;
+	border-style: none solid solid none;
+	-webkit-transform-origin: 75% 75%;
+	-moz-transform-origin: 75% 75%;
+	-o-transform-origin: 75% 75%;
+	-ms-transform-origin: 75% 75%;
+	transform-origin: 75% 75%;
+}
+
+.pagination .next > a {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.pagination .prev > a {
+	-webkit-transform: rotate(-135deg);
+	-moz-transform: rotate(-135deg);
+	-o-transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+
+.pagination {
+	padding-bottom: 1em;
+}
+
