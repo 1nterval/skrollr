@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Skrollr 1.0.7\n"
+"Project-Id-Version: Skrollr 1.0.9\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/skrollr\n"
-"POT-Creation-Date: 2015-07-27 13:13:30+00:00\n"
+"POT-Creation-Date: 2015-09-28 19:11:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -130,27 +130,43 @@ msgstr ""
 msgid "Search results for \"%s\""
 msgstr ""
 
-#: inc/shortcodes.php:53
-msgid "Gallery Settings"
+#. translators: Anchor for top of the page, this string will appear in a URL
+#: inc/navmenu/register.php:28 templates/chapo.php:9
+msgctxt "anchor"
+msgid "top"
+msgstr ""
+
+#. translators: Anchor for bottom of the page, this string will appear in a URL
+#: inc/navmenu/register.php:30 templates/bottes.php:4
+msgctxt "anchor"
+msgid "bottom"
+msgstr ""
+
+#: inc/navmenu/register.php:43
+msgid "Top"
 msgstr ""
 
 #: inc/shortcodes.php:57
-msgid "Gallery type"
+msgid "Gallery Settings"
 msgstr ""
 
 #: inc/shortcodes.php:61
+msgid "Gallery type"
+msgstr ""
+
+#: inc/shortcodes.php:65
 msgid "Melded"
 msgstr ""
 
-#: inc/shortcodes.php:64
+#: inc/shortcodes.php:68
 msgid "Rolling up"
 msgstr ""
 
-#: inc/shortcodes.php:67
+#: inc/shortcodes.php:71
 msgid "Rolling down"
 msgstr ""
 
-#: inc/shortcodes.php:70
+#: inc/shortcodes.php:74
 msgid "Shutter"
 msgstr ""
 
@@ -162,16 +178,16 @@ msgstr ""
 msgid "Twitter URL"
 msgstr ""
 
-#: templates/block-gallery.php:28 templates/block-video.php:2
-#: templates/block.php:17 templates/chapo.php:28
+#: templates/block-gallery.php:49 templates/block-video.php:2
+#: templates/block.php:17 templates/chapo.php:31
 msgid "Edit"
 msgstr ""
 
-#: templates/chapo.php:12
+#: templates/chapo.php:15
 msgid "Read next ..."
 msgstr ""
 
-#: templates/chapo.php:13
+#: templates/chapo.php:16
 msgid "go down to start"
 msgstr ""
 

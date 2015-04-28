@@ -42,8 +42,6 @@ function skrollr_print_assets(){
 		wp_enqueue_style('skrollr-theme', get_template_directory_uri().'/css/theme.css', array('skrollr-state'), $ver);
 	}
 
-	
-
 	if(defined('SCRIPT_DEBUG') && !SCRIPT_DEBUG && file_exists(dirname(__FILE__).'/build/jsbuild.php')){
 		// scripts (minified version)
 		wp_enqueue_script('skrollr-modernizr', get_template_directory_uri().'/js/libs/modernizr-2.8.3.min.js', array(), '2.8.3', false);
@@ -52,16 +50,17 @@ function skrollr_print_assets(){
 	} else {
 		wp_enqueue_script('skrollr-modernizr', get_template_directory_uri().'/js/libs/modernizr-2.8.3.js', array(), '2.8.3', false);
 		wp_enqueue_script('skrollr-lib', get_template_directory_uri().'/js/libs/skrollr.js', array(), '0.6.29', true);
+		wp_enqueue_script('skrollr-menu', get_template_directory_uri().'/js/libs/skrollr.menu.js', array('skrollr-lib'), '0.1.13', true);
 		wp_enqueue_script('skrollr-plugins', get_template_directory_uri().'/js/plugins.js', array(), $ver, true);
 		wp_enqueue_script('skrollr-slabtext', get_template_directory_uri().'/js/libs/jquery.slabtext.js', array('jquery'), '2.2.0', true);
-		wp_enqueue_script('skrollr-main', get_template_directory_uri().'/js/main.js', array( 'skrollr-plugins', 'jquery', 'skrollr-lib', 'mediaelement', 'skrollr-slabtext'), $ver, true);
+		wp_enqueue_script('skrollr-main', get_template_directory_uri().'/js/main.js', array( 'skrollr-plugins', 'jquery', 'skrollr-lib', 'skrollr-menu', 'mediaelement', 'skrollr-slabtext'), $ver, true);
 	}
 
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 }
 
 // include features
-foreach( array( 'footermenu', 'shortcodes', 'header_background', 'color_tools', 'content_colors', 'positionIcon', 'metadesc', 'layout', 'metadata', 'social_icons' ) as $feature ) {
+foreach( array( 'footermenu', 'shortcodes', 'header_background', 'color_tools', 'content_colors', 'positionIcon', 'metadesc', 'layout', 'metadata', 'social_icons', 'navmenu' ) as $feature ) {
 	$file = sprintf( '%s/inc/%s.php', get_template_directory(), $feature );
 	$rep = sprintf( '%s/inc/%s/register.php', get_template_directory(), $feature );
 	if( file_exists( $file ) ) {

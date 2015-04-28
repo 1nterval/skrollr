@@ -21,6 +21,13 @@ jQuery(function($){
 					}
 				});
 
+				var $nav = $('.skrollable-between').parent('.nav-item');
+				if($nav.length) {
+					$('.nav-item').not($nav).removeClass('current');
+					$nav.addClass('current');
+					if(!$nav.parent().hasClass('menu')) slidingMenu.slideFor($nav.index());
+				}
+
 				// démarrer la vidéo visible
 				$currentVideo = $('.sk-video.skrollable-between');
 				var player2 = $currentVideo.data('player');
@@ -45,6 +52,14 @@ jQuery(function($){
 			}
 		});
 		setTimeout(s.refresh, 500);
+
+		skrollr.menu.init(s);
+
+		$('#main-menu').hover(function(){
+			$(this).addClass('active');
+		}, function(){
+			$(this).removeClass('active');
+		});
 
 		$('.block.video').click(function(){
 			var player;

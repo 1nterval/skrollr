@@ -5,8 +5,11 @@
 	// get the custom layout
 	$class = Skrollr_Customize_Layout::get_instance()->get_layout_classes();
 
-?><header id="accueil" class="block block-0 row">
-	<h1 class="<?php echo esc_attr($main_title_class) ?>" data-top="opacity:1;transform:scale(1);display:<?php if( display_header_text() ) : ?>block<?php else: ?>none<?php endif ?>" data-top-bottom="opacity:0;transform:scale(2);display:none" data-anchor-target="#accueil">
+	// translators: Anchor for top of the page, this string will appear in a URL
+	$top_anchor = _x( 'top', 'anchor', 'skrollr' );
+
+?><header id="<?php echo $top_anchor; ?>" class="block block-0 row">
+	<h1 class="<?php echo esc_attr($main_title_class) ?>" data-top="opacity:1;transform:scale(1);display:<?php if( display_header_text() ) : ?>block<?php else: ?>none<?php endif ?>" data-top-bottom="opacity:0;transform:scale(2);display:none" data-anchor-target="#<?php echo $top_anchor; ?>">
 		<span class="slabtext"><?php bloginfo( 'name' ) ?></span>
 	</h1>
 	<a class="scrolldown" title="<?php _e('Read next ...', 'skrollr') ?>" href="#chapo">

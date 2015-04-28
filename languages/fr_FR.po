@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Skrollr 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/skrollr\n"
-"POT-Creation-Date: 2015-07-27 13:13:30+00:00\n"
-"PO-Revision-Date: 2015-07-27 15:16+0100\n"
+"POT-Creation-Date: 2015-09-28 19:11:41+00:00\n"
+"PO-Revision-Date: 2015-09-28 21:13+0100\n"
 "Last-Translator: Fabien Quatravaux <fabien.quatravaux@1nterval.com>\n"
 "Language-Team: Fabien Quatravaux <fabien.quatravaux@1nterval.com>\n"
 "Language: fr_FR\n"
@@ -139,27 +139,43 @@ msgstr "404, Page non trouvée"
 msgid "Search results for \"%s\""
 msgstr "Résultats de recherche pour \"%s\""
 
-#: inc/shortcodes.php:53
+#. translators: Anchor for top of the page, this string will appear in a URL
+#: inc/navmenu/register.php:28 templates/chapo.php:9
+msgctxt "anchor"
+msgid "top"
+msgstr "haut-de-page"
+
+#. translators: Anchor for bottom of the page, this string will appear in a URL
+#: inc/navmenu/register.php:30 templates/bottes.php:4
+msgctxt "anchor"
+msgid "bottom"
+msgstr "bas-de-page"
+
+#: inc/navmenu/register.php:43
+msgid "Top"
+msgstr "Haut de page"
+
+#: inc/shortcodes.php:57
 msgid "Gallery Settings"
 msgstr "Réglages de la galerie"
 
-#: inc/shortcodes.php:57
+#: inc/shortcodes.php:61
 msgid "Gallery type"
 msgstr "Type de galerie"
 
-#: inc/shortcodes.php:61
+#: inc/shortcodes.php:65
 msgid "Melded"
 msgstr "Fondu"
 
-#: inc/shortcodes.php:64
+#: inc/shortcodes.php:68
 msgid "Rolling up"
 msgstr "Déroulé de bas en haut"
 
-#: inc/shortcodes.php:67
+#: inc/shortcodes.php:71
 msgid "Rolling down"
 msgstr "Déroulé de haut en bas"
 
-#: inc/shortcodes.php:70
+#: inc/shortcodes.php:74
 msgid "Shutter"
 msgstr "Volet"
 
@@ -171,16 +187,16 @@ msgstr "Lien Facebook"
 msgid "Twitter URL"
 msgstr "Lien Twitter"
 
-#: templates/block-gallery.php:28 templates/block-video.php:2
-#: templates/block.php:17 templates/chapo.php:28
+#: templates/block-gallery.php:49 templates/block-video.php:2
+#: templates/block.php:17 templates/chapo.php:31
 msgid "Edit"
 msgstr "Modifier"
 
-#: templates/chapo.php:12
+#: templates/chapo.php:15
 msgid "Read next ..."
 msgstr "Lire la suite ..."
 
-#: templates/chapo.php:13
+#: templates/chapo.php:16
 msgid "go down to start"
 msgstr "descendez pour commencer"
 

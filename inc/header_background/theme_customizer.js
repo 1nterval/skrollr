@@ -4,22 +4,19 @@
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( newval ) {
 			if( newval == 'blank' ) {
-				$( '#accueil > h1' )
-					.css( 'display', 'none' )
-					.attr( 'data-top', 'opacity:1;transform:scale(1);display:none' );
+				$( '.block-0 > h1' ).attr( 'data-top', 'display:none' );
 			} else {
-				$( '#accueil > h1' ).css( {
-					display: 'block',
+				$( '.block-0 > h1' ).css( {
 					color: newval
 				}).attr( 'data-top', 'opacity:1;transform:scale(1);display:block' );;
 			}
-			skrollr.get().refresh($( '#accueil > h1' ));
+			skrollr.get().refresh($( '.block-0 > h1' ));
 		} );
 	} );
 
 	wp.customize( 'header_image', function( value ) {
 		value.bind( function( newval ) {
-			$( '#accueil' ).css( 'background-image', 'url(' + newval + ')' );
+			$( '.block-0' ).css( 'background-image', 'url(' + newval + ')' );
 		} );
 	} );
 
