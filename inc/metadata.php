@@ -19,6 +19,7 @@ class Skrollr_Metadata {
 		// pagination
 		add_filter( 'next_posts_link_attributes', array( $this, 'add_ir_class' ) );
 		add_filter( 'previous_posts_link_attributes', array( $this, 'add_ir_class' ) );
+		add_action( 'get_footer', array( $this, 'pagination' ) );
 	}
 
 	/**

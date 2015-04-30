@@ -45,7 +45,9 @@
 			}
 		?>
 
-		<?php get_footer() ?>
+		<footer class="container-fluid">
+			<?php get_footer() ?>
+		</footer>
 		<?php wp_footer(); ?>
 	</body>
 </html>
