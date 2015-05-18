@@ -72,12 +72,6 @@ jQuery(function($){
 
 		skrollr.menu.init(s);
 
-		$('#main-menu').hover(function(){
-			$(this).addClass('active');
-		}, function(){
-			$(this).removeClass('active');
-		});
-
 		// forward click event the the video timeline
 		$('.block.video').on( 'mousedown', function(e){
 			var player, forwardEvent;

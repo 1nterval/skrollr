@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Skrollr 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/skrollr\n"
-"POT-Creation-Date: 2015-09-28 19:11:41+00:00\n"
-"PO-Revision-Date: 2015-09-29 03:27+0100\n"
+"POT-Creation-Date: 2015-09-30 07:31:41+00:00\n"
+"PO-Revision-Date: 2015-09-30 09:33+0100\n"
 "Last-Translator: Fabien Quatravaux <fabien.quatravaux@1nterval.com>\n"
 "Language-Team: Fabien Quatravaux <fabien.quatravaux@1nterval.com>\n"
 "Language: fr_FR\n"
@@ -178,20 +178,24 @@ msgid "Search results for \"%s\""
 msgstr "Résultats de recherche pour \"%s\""
 
 #. translators: Anchor for top of the page, this string will appear in a URL
-#: inc/navmenu/register.php:28 templates/chapo.php:9
+#: inc/navmenu/register.php:37 templates/chapo.php:9
 msgctxt "anchor"
 msgid "top"
 msgstr "haut-de-page"
 
 #. translators: Anchor for bottom of the page, this string will appear in a URL
-#: inc/navmenu/register.php:30 templates/bottes.php:4
+#: inc/navmenu/register.php:39 templates/bottes.php:4
 msgctxt "anchor"
 msgid "bottom"
 msgstr "bas-de-page"
 
-#: inc/navmenu/register.php:42
+#: inc/navmenu/register.php:51
 msgid "Top"
 msgstr "Haut de page"
+
+#: inc/navmenu/register.php:105
+msgid "Display main navigation menu"
+msgstr "Afficher le menu de navigation principal"
 
 #: inc/shortcodes.php:57
 msgid "Gallery Settings"
@@ -270,9 +274,6 @@ msgstr ""
 
 #~ msgid "<h2>Credits</h2>"
 #~ msgstr "<h2>Crédits</h2>"
-
-#~ msgid "Main navigation menu"
-#~ msgstr "Menu de navigation principal"
 
 #~ msgid "Menu top logo"
 #~ msgstr "Logo dans le menu"

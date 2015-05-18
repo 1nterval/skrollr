@@ -11,35 +11,39 @@ jQuery(function($){
 	var timer;
 	var availableSpace = Math.ceil(win.height*0.8 - h*2);
 
-	// recalculate when window size change
-	$(window).resize(function(){
-		win = {
-			width: $(window).width(),
-			height: $(window).height()
-		};
-		availableSpace = win.height*0.8 - h*2;
+	function resize(){
+		// recalculate when window size change
+		$(window).resize(function(){
+			win = {
+				width: $(window).width(),
+				height: $(window).height()
+			};
+			availableSpace = win.height*0.8 - h*2;
 
-		// reinit masking zone
-		maskingZone($m.position().top);
-		placeDownArrow();
-	});
+			// reinit masking zone
+			maskingZone($m.position().top);
+			placeDownArrow();
+		});
+	}
 
-	// slide menu when mouse is hovered over "home" or "bottom" items
-	$('#main-menu .menu > a').first().hover(function(){
-		clearInterval(timer);
-		slide(-1);
-		timer = setInterval(function(){slide(-1);}, 500);
-	}, function(){
-		clearInterval(timer);
-	});
+	function setupBoudaries(){
+		// slide menu when mouse is hovered over "home" or "bottom" items
+		$('#main-menu .menu > a').first().hover(function(){
+			clearInterval(timer);
+			slide(-1);
+			timer = setInterval(function(){slide(-1);}, 500);
+		}, function(){
+			clearInterval(timer);
+		});
 
-	$('#main-menu .menu > a').last().hover(function(){
-		clearInterval(timer);
-		slide(1);
-		timer = setInterval(function(){slide(1);}, 500);
-	}, function(){
-		clearInterval(timer);
-	});
+		$('#main-menu .menu > a').last().hover(function(){
+			clearInterval(timer);
+			slide(1);
+			timer = setInterval(function(){slide(1);}, 500);
+		}, function(){
+			clearInterval(timer);
+		});
+	}
 
 	/**
 	* auto sliding
@@ -94,9 +98,27 @@ jQuery(function($){
 		}
 	}
 
-	// init masking zone
-	maskingZone($m.position().top);
-	placeDownArrow();
+	function skrollrMenu(){
+
+		$('#main-menu').hover(function(){
+			$(this).addClass('active');
+		}, function(){
+			$(this).removeClass('active');
+		});
+	}
+
+	function init(){
+		resize();
+		setupBoudaries();
+		// init masking zone
+		maskingZone($m.position().top);
+		placeDownArrow();
+		skrollrMenu();
+	}
+
+	if( $m.length ){
+		init();
+	}
 
 	// export public functions
 	window.slidingMenu = {

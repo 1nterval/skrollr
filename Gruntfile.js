@@ -33,9 +33,9 @@ module.exports = function( grunt ) {
 					'js/libs/skrollr.js',
 					'js/libs/skrollr.menu.js',
 					'js/plugins.js',
-					'js/sliding-menu.js',
 					'js/libs/jquery.slabtext.js',
-					'js/main.js'
+					'js/main.js',
+					'inc/navmenu/sliding-menu.js'
 				],
 				dest: 'js/script.min.js',
 				mangle: {
