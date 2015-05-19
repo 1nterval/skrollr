@@ -43,6 +43,8 @@ class Skrollr_Header_Description {
 			'priority' => 200
 		) );
 
+		// make chages to slogan appear without roundtrip to the server
+		$wp_customize->get_setting('blogdescription')->transport = 'postMessage';
 	}
 
 	function live_preview(){
