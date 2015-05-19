@@ -1,9 +1,7 @@
 <?php 
-	$title_width = get_theme_mod( 'title_width', 4 );
-	$main_title_class = "col-sm-" . ($title_width*2) . " col-sm-offset-" . (6 - $title_width);
-
 	// get the custom layout
 	$class = Skrollr_Customize_Layout::get_instance()->get_layout_classes();
+	$main_title_class = Skrollr_Title::get_instance()->get_layout_classes();
 
 	// translators: Anchor for top of the page, this string will appear in a URL
 	$top_anchor = _x( 'top', 'anchor', 'skrollr' );

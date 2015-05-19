@@ -60,7 +60,7 @@ function skrollr_print_assets(){
 }
 
 // include features
-foreach( array( 'footermenu', 'shortcodes', 'header_background', 'color_tools', 'content_colors', 'positionIcon', 'metadesc', 'layout', 'metadata', 'social_icons', 'navmenu', 'credits' ) as $feature ) {
+foreach( array( 'footermenu', 'shortcodes', 'header_background', 'color_tools', 'content_colors', 'positionIcon', 'metadesc', 'layout', 'metadata', 'social_icons', 'navmenu', 'credits', 'title' ) as $feature ) {
 	$file = sprintf( '%s/inc/%s.php', get_template_directory(), $feature );
 	$rep = sprintf( '%s/inc/%s/register.php', get_template_directory(), $feature );
 	if( file_exists( $file ) ) {
