@@ -97,7 +97,7 @@
    Content
    ========================================================================== */
 
-.block, #chapo {
+.block, #chapo, footer {
 	position: relative;
 	z-index: 200;
 }
@@ -444,7 +444,7 @@ blockquote > p:after {
 	transform: rotate(-135deg);
 }
 
-.pagination {
+.pagination, footer {
 	padding-bottom: 1em;
 }
 

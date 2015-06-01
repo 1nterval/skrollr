@@ -78,7 +78,7 @@ a:hover {
 }
 
 /* default colors (can be overriden via the customizer) */
-body, .block, .one-column {
+body, .block, .one-column, footer {
 	background-color: #eaeaea;
 	color: #505050;
 }
