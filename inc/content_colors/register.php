@@ -127,11 +127,11 @@ class Scrollr_Customize_Content_Colors {
 				color: <?php echo $txt_color ?>;
 			}
 
-			.mejs-controls .mejs-time-rail .mejs-time-current {
+			.mejs-video .mejs-controls .mejs-time-rail .mejs-time-current {
 				background: <?php echo $bg_active_color ?>;
 			}
 
-			.mejs-controls .mejs-time-rail .mejs-time-loaded {
+			.mejs-video .mejs-controls .mejs-time-rail .mejs-time-loaded {
 				background: <?php echo $txt_color ?>;
 			}
 

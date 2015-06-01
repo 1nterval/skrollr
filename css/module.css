@@ -229,66 +229,66 @@ html.skrollr, .skrollr body {
 /* ==========================================================================
    MediaElement Player
    ========================================================================== */
-.mejs-container .mejs-controls {
+.mejs-video .mejs-container .mejs-controls {
 	height: 15px;
 	background: transparent;
 }
 
-.mejs-controls div.mejs-time-rail {
+.mejs-video .mejs-controls div.mejs-time-rail {
 	height: 15px;
 	padding-top: 0;
 }
 
-.mejs-controls .mejs-time-rail span {
+.mejs-video .mejs-controls .mejs-time-rail span {
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border-radius: 0;
 	height: 15px;
 }
 
-.mejs-controls .mejs-time-rail .mejs-time-total {
+.mejs-video .mejs-controls .mejs-time-rail .mejs-time-total {
 	height: 15px;
 	background: transparent;
 }
 
-.mejs-controls .mejs-time-rail .mejs-time-loaded {
+.mejs-video .mejs-controls .mejs-time-rail .mejs-time-loaded {
 	height: 1px;
 	margin-top: 5px;
 }
 
-.mejs-overlay-button {
+.mejs-video .mejs-overlay-button {
 	background: url(../img/bigplay.svg) no-repeat;
 	background-size: cover;
 }
 
-.mejs-overlay-loading {
+.mejs-video .mejs-overlay-loading {
 	background: none;
 }
 
 @media (min-width: 768px) {
-	.mejs-overlay-loading {
+	.mejs-video .mejs-overlay-loading {
 		width: 400px;
 		height: 400px;
 		margin: -200px 0 0 -200px;
 	}
 
-	.mejs-overlay-loading > span {
+	.mejs-video .mejs-overlay-loading > span {
 		width: 400px;
 		height: 400px;
 	}
 
-	.mejs-overlay-button {
+	.mejs-video .mejs-overlay-button {
 		width: 500px;
 		height: 500px;
 		margin: -250px 0 0 -250px;
 	}
 
-	.mejs-overlay:hover .mejs-overlay-button {
+	.mejs-video .mejs-overlay:hover .mejs-overlay-button {
 		background-position: 0 -500px;
 	}
 }
 
-.mejs-overlay-loading > span {
+.mejs-video .mejs-overlay-loading > span {
 	background: url(../img/loading.svg) 50% 50% no-repeat;
 	background-size: cover;
 

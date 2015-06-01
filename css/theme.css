@@ -139,11 +139,11 @@ blockquote > p:before, blockquote > p:after {
 	color: white;
 }
 
-.mejs-controls .mejs-time-rail .mejs-time-current {
+.mejs-video .mejs-controls .mejs-time-rail .mejs-time-current {
 	background: #b61713;
 }
 
-.mejs-controls .mejs-time-rail .mejs-time-loaded {
+.mejs-video .mejs-controls .mejs-time-rail .mejs-time-loaded {
 	background: white;
 }
 
