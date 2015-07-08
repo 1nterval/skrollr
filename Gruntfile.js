@@ -30,8 +30,7 @@ module.exports = function( grunt ) {
 					}
 				},
 				src: [
-					'js/libs/skrollr.min.js',
-					'js/libs/skrollr.menu.min.js',
+					'js/libs/skrollr.js',
 					'js/plugins.js',
 					'js/libs/jquery.slabtext.js',
 					'js/main.js'
