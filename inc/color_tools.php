@@ -1,9 +1,11 @@
 <?php
-if( !function_exists('rgb2hsl') ){
+
+class Skrollr_Color_Tools {
+
 	/**
 	* convert RGB to HSL
 	*/
-	function rgb2hsl($red, $green, $blue) {
+	static function rgb2hsl($red, $green, $blue) {
 		if($red > 1 || $green > 1 || $blue > 1) {
 			$red = $red / 255;
 			$green = $green / 255;
@@ -49,13 +51,11 @@ if( !function_exists('rgb2hsl') ){
 
 		return array($hue, $sat, $lum);
 	}
-}
 
-if( !function_exists('hue2rgb') ){
 	/**
 	* Convert hue to RBG
 	*/
-	function hue2rgb($v1,$v2,$vh) {
+	static function hue2rgb($v1,$v2,$vh) {
 		if ($vh < 0) {
 			$vh += 1;
 		}
@@ -78,13 +78,11 @@ if( !function_exists('hue2rgb') ){
 
 		return ($v1);
 	}
-}
 
-if( !function_exists(' hsl2rgb') ){
 	/**
 	* convert HSL to RGB
 	*/
-	function hsl2rgb($hue, $sat, $lum, $format='float') {
+	static function hsl2rgb($hue, $sat, $lum, $format='float') {
 		if ($sat == 0) {
 			$red = $lum;
 			$green = $lum;
@@ -97,23 +95,20 @@ if( !function_exists(' hsl2rgb') ){
 			}
 
 			$var_1 = 2 * $lum - $var_2;
-			$red = hue2rgb($var_1,$var_2,$hue + (1 / 3));
-			$green = hue2rgb($var_1,$var_2,$hue);
-			$blue = hue2rgb($var_1,$var_2,$hue - (1 / 3));
+			$red = Skrollr_Color_Tools::hue2rgb($var_1,$var_2,$hue + (1 / 3));
+			$green = Skrollr_Color_Tools::hue2rgb($var_1,$var_2,$hue);
+			$blue = Skrollr_Color_Tools::hue2rgb($var_1,$var_2,$hue - (1 / 3));
 		}
 	
-		//var_dump(array(($red*255), ($green*255), ($blue*255)));
 		if($format == 'float') return array($red, $green, $blue);
 		else if($format == 'dec') return array($red*255, $green*255, $blue*255);
 		else if($format == 'hex') return implode('', array_map(function($v){ return str_pad(dechex($v*255), 2, '0', STR_PAD_LEFT); }, array($red, $green, $blue)));
 	}
-}
 
-if( !function_exists('rgbhex2dec') ){
 	/**
 	* convert RGB from HEX to DEC format
 	*/
-	function rgbhex2dec($color) {
+	static function rgbhex2dec($color) {
 		return array(
 			hexdec(substr($color, 1, 2)),
 			hexdec(substr($color, 3, 2)),

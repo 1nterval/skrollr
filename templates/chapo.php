@@ -3,7 +3,7 @@
 	$main_title_class = "col-sm-" . ($title_width*2) . " col-sm-offset-" . (6 - $title_width);
 
 	// get the custom layout
-	$class = Scrollr_Customize_Layout::get_instance()->get_layout_classes();
+	$class = Skrollr_Customize_Layout::get_instance()->get_layout_classes();
 
 ?><header id="accueil" class="block block-0 row">
 	<h1 class="<?php echo $main_title_class ?>" data-top="opacity:1;transform:scale(1);display:<?php if( display_header_text() ) : ?>block<?php else: ?>none<?php endif ?>" data-top-bottom="opacity:0;transform:scale(2);display:none" data-anchor-target="#accueil">
@@ -17,10 +17,10 @@
 
 <div id="chapo" class="one-column clearfix row">
 	<div class="title-column <?php echo $class['title'] ?>"><?php
-		echo Scrollr_Header_Description::get_instance()->get_title();
+		echo Skrollr_Header_Description::get_instance()->get_title();
 	?></div>
 	<div class="text-column <?php echo $class['content'] ?>"><?php 
-		echo Scrollr_Header_Description::get_instance()->get_desc();
+		echo Skrollr_Header_Description::get_instance()->get_desc();
 	?></div>
 
 	<?php if( current_user_can( 'edit_theme_options' ) ) : ?>

@@ -5,7 +5,7 @@
 	$show_title = (trim($content) != '' || $multipage);
 
 	// get the custom layout
-	$class = Scrollr_Customize_Layout::get_instance()->get_layout_classes();
+	$class = Skrollr_Customize_Layout::get_instance()->get_layout_classes();
 
 ?><div <?php post_class(); ?> id="<?php echo $post->post_name ?>">
 	<?php if( $show_title ) :

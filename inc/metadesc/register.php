@@ -3,7 +3,7 @@
 /**
 * Provide a long description for the site (in addition to title and slogan)
 */
-class Scrollr_Header_Description {
+class Skrollr_Header_Description {
 
 	private static $instance;
 
@@ -116,4 +116,4 @@ class Scrollr_Header_Description {
 	}
 }
 
-new Scrollr_Header_Description;
+new Skrollr_Header_Description;

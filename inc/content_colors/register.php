@@ -1,6 +1,6 @@
 <?php
 
-class Scrollr_Customize_Content_Colors {
+class Skrollr_Customize_Content_Colors {
 
 	private static $instance;
 
@@ -79,7 +79,7 @@ class Scrollr_Customize_Content_Colors {
 	}
 
 	function get_css( $bg_color, $bg_active_color, $txt_color) {
-		$bg_active_color_dec = rgbhex2dec($bg_active_color);
+		$bg_active_color_dec = Skrollr_Color_Tools::rgbhex2dec($bg_active_color);
 		?>
 			body, .block, .one-column, footer {
 				background-color: #eaeaea;
@@ -179,4 +179,4 @@ class Scrollr_Customize_Content_Colors {
 	}
 }
 
-new Scrollr_Customize_Content_Colors;
+new Skrollr_Customize_Content_Colors;

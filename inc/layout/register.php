@@ -1,6 +1,6 @@
 <?php
 
-class Scrollr_Customize_Layout {
+class Skrollr_Customize_Layout {
 
 	private static $instance;
 
@@ -170,4 +170,4 @@ class Scrollr_Customize_Layout {
 	}
 }
 
-new Scrollr_Customize_Layout;
+new Skrollr_Customize_Layout;

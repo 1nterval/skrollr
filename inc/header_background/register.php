@@ -1,6 +1,6 @@
 <?php
 
-class Scrollr_Customize_Header_Background {
+class Skrollr_Customize_Header_Background {
 
 	private static $instance;
 
@@ -84,4 +84,4 @@ class Scrollr_Customize_Header_Background {
 	}
 }
 
-new Scrollr_Customize_Header_Background;
+new Skrollr_Customize_Header_Background;
