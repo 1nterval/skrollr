@@ -30,6 +30,17 @@
 	display: none;
 }
 
+/* WordPress admin bar */
+.admin-bar .partage {
+	top: 42px;
+}
+
+@media screen and ( max-width: 770px ) {
+	.admin-bar .partage {
+		top: 56px;
+	}
+}
+
 .partage > a {
 	display: block;
 	font-size: 1.5em;
