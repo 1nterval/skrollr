@@ -36,7 +36,7 @@ class Skrollr_Position_Icon {
 		$image_mod = get_theme_mod( $image, null );
 		$url_mod = get_theme_mod( $url, home_url() );
 		$position_mod = get_theme_mod( $position, array("top" => 0, "left" => 0) );
-		$style = 'position:absolute;';
+		$style = 'position:absolute;z-index:9999;';
 		foreach( array( 'top', 'bottom', 'left', 'right' ) as $pos ) {
 			if( isset( $position_mod[$pos] )) $style .= "$pos:{$position_mod[$pos]}%;";
 		}

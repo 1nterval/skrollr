@@ -89,6 +89,7 @@ class Skrollr_Customize_Layout {
 		) );
 		$wp_customize->add_control( new Icon_Position_Custom_Control( $wp_customize, 'logo_header_position', array(
 			'label'      => __( 'Logo position', 'skrollr' ),
+			'description' => __( 'Drag the logo around with your mouse to change its position', 'skrollr' ),
 			'section'    => 'layout',
 			'settings'   => array(
 				'image'    => 'logo_header',

@@ -25,7 +25,7 @@
 	function bindDragEvent( id ) {
 		var $icon = $('#'+id);
 		if( $icon.draggable( "instance" ) == undefined ) {
-			$icon.css('cursor', 'move').draggable({
+			$icon.css({ 'cursor' : 'move', 'z-index' : 9999 }).draggable({
 				stop: function(event, ui){
 					wp.customize.preview.send( 'iconPosition-update', {
 						top : ui.position.top / $(this).parent().height() * 100,
