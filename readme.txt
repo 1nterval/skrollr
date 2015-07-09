@@ -14,3 +14,32 @@ Do you have a story to tell ? Or a multimedia report to publish ? Or a long form
 This natural-scrolling theme is the one you need. Its native navigation on mobile let user scroll you content with their finger.
 No click or tap is needed to view the content.
 
+== Copyright ==
+Skrollr Theme Copyright 1nterval - Fabien Quatravaux 2015
+Skrollr Theme is distributed under the terms of the GPLv2 or later
+
+== External resources ==
+skrollr Javascript library
+Copyright Alexander Prinzhorn
+https://github.com/Prinzhorn/skrollr/blob/master/LICENSE.txt
+MIT License
+
+Modernizr
+http://modernizr.com/license/
+MIT License
+
+slabText
+Copyright Brian McAllister
+https://github.com/freqdec/slabText/blob/master/LICENSE.txt
+MIT License
+
+Titillium font
+Copyright Accademia di Belle Arti di Urbino
+http://www.fontsquirrel.com/license/Titillium
+SIL OPEN FONT LICENSE
+
+Example header image : Magic Book
+Copyright Cole Greyis on Deviant Art
+http://colgreyis.deviantart.com/art/magic-book-269490471
+
+
