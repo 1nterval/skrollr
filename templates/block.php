@@ -15,5 +15,9 @@
 		the_category(', ');
 	?></div>
 	<?php edit_post_link( sprintf( '<span class="icons icomoon-edit" title="%s"></span>', __( 'Edit', 'skrollr' ) ) ); ?>
-	<?php comments_template(); ?>
+	<?php 
+		global $withcomments;
+		$withcomments = 1;
+		comments_template();
+	?>
 </div>
