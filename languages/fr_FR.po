@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Skrollr 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/skrollr\n"
-"POT-Creation-Date: 2015-04-24 16:00:24+00:00\n"
-"PO-Revision-Date: 2015-04-24 18:01+0100\n"
+"POT-Creation-Date: 2015-07-09 09:01:15+00:00\n"
+"PO-Revision-Date: 2015-07-09 11:03+0100\n"
 "Last-Translator: Fabien Quatravaux <fabien.quatravaux@1nterval.com>\n"
 "Language-Team: Fabien Quatravaux <fabien.quatravaux@1nterval.com>\n"
 "Language: fr_FR\n"
@@ -16,6 +16,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #: comments.php:5
+msgid "See the comments"
+msgstr "Voir les commentaires"
+
+#: comments.php:7
 msgid "One Response to %2$s"
 msgid_plural "%1$s Responses to %2$s"
 msgstr[0] "Une réponse à %2$s"
@@ -33,9 +37,17 @@ msgstr "Couleur de fond état actif"
 msgid "Text color"
 msgstr "Couleur de texte"
 
-#: inc/footermenu.php:17
+#: inc/footermenu.php:34
 msgid "Footer menu"
 msgstr "Menu du pied de page"
+
+#: inc/footermenu.php:49
+msgid "Footer bar"
+msgstr "Bande du pied de page"
+
+#: inc/footermenu.php:51
+msgid "Displays at the bottom of each page"
+msgstr "S'affiche à la fin de chaque page"
 
 #: inc/header_background/register.php:48
 msgid "Magic Book"
@@ -73,13 +85,9 @@ msgstr "Adresse pointée par le logo"
 msgid "Logo position"
 msgstr "Position du logo"
 
-#: inc/navmenu/register.php:16
-msgid "Main navigation menu"
-msgstr "Menu de navigation principal"
-
-#: inc/navmenu/register.php:168
-msgid "Menu top logo"
-msgstr "Logo dans le menu"
+#: inc/layout/register.php:92
+msgid "Drag the logo around with your mouse to change its position"
+msgstr "Déplacer le logo avec votre souris pour changer sa position"
 
 #: inc/metadata.php:38
 msgid "Uncategorized"
@@ -147,6 +155,14 @@ msgstr "Déroulé de haut en bas"
 msgid "Shutter"
 msgstr "Volet"
 
+#: inc/social_icons/register.php:54
+msgid "Facebook URL"
+msgstr "Lien Facebook"
+
+#: inc/social_icons/register.php:59
+msgid "Twitter URL"
+msgstr "Lien Twitter"
+
 #: templates/block-gallery.php:28 templates/block-video.php:2
 #: templates/block.php:17
 msgid "Edit"
@@ -189,6 +205,12 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://fab1en.github.io"
 msgstr ""
+
+#~ msgid "Main navigation menu"
+#~ msgstr "Menu de navigation principal"
+
+#~ msgid "Menu top logo"
+#~ msgstr "Logo dans le menu"
 
 #~ msgid "Title font"
 #~ msgstr "Police du titre"
