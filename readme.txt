@@ -40,6 +40,6 @@ SIL OPEN FONT LICENSE
 
 Example header image : Magic Book
 Copyright Cole Greyis on Deviant Art
-http://colgreyis.deviantart.com/art/magic-book-269490471
-
+http://chabien.deviantart.com/art/Magic-Book-By-Colgreyis-546067590
+Creative Commons Attribution-Share Alike 3.0 License
 
