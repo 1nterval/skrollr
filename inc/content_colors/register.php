@@ -78,7 +78,10 @@ class Skrollr_Customize_Content_Colors {
 		die();
 	}
 
-	function get_css( $bg_color, $bg_active_color, $txt_color) {
+	function get_css( $bg_color, $bg_active_color, $txt_color ) {
+		$bg_color = esc_attr( $bg_color );
+		$bg_active_color = esc_attr( $bg_active_color );
+		$txt_color = esc_attr( $txt_color );
 		$bg_active_color_dec = Skrollr_Color_Tools::rgbhex2dec($bg_active_color);
 		?>
 			body, .block, .one-column, footer {

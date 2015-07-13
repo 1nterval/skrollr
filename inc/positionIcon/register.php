@@ -41,7 +41,7 @@ class Skrollr_Position_Icon {
 			if( isset( $position_mod[$pos] )) $style .= "$pos:{$position_mod[$pos]}%;";
 		}
 		if( $image_mod ) : ?>
-			<a id="logo-header" href="<?php echo $url_mod ?>" style="<?php echo $style ?>"><img src="<?php echo $image_mod ?>"/></a>
+			<a id="logo-header" href="<?php echo esc_url( $url_mod ) ?>" style="<?php echo esc_attr( $style ) ?>"><img src="<?php echo esc_url( $image_mod ) ?>"/></a>
 		<?php endif;
 	}
 

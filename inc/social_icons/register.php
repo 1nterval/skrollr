@@ -27,10 +27,10 @@ class Skrollr_Social_Icons {
 		if( $facebook || $twitter ) {
 			?><aside class="partage">
 				<?php if( $facebook ) : ?>
-					<a class="ir icons icomoon-facebook" href="<?php echo $facebook ?>" target="_blank">facebook</a>
+					<a class="ir icons icomoon-facebook" href="<?php echo esc_url($facebook) ?>" target="_blank">facebook</a>
 				<?php endif; ?>
 				<?php if( $twitter ) : ?>
-					<a class="ir icons icomoon-twitter" href="<?php echo $twitter ?>" target="_blank" >twitter</a>
+					<a class="ir icons icomoon-twitter" href="<?php echo esc_url($twitter) ?>" target="_blank" >twitter</a>
 				<?php endif; ?>
 			</aside><?php
 		}

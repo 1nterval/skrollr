@@ -6,7 +6,7 @@
 	$class = Skrollr_Customize_Layout::get_instance()->get_layout_classes();
 
 ?><header id="accueil" class="block block-0 row">
-	<h1 class="<?php echo $main_title_class ?>" data-top="opacity:1;transform:scale(1);display:<?php if( display_header_text() ) : ?>block<?php else: ?>none<?php endif ?>" data-top-bottom="opacity:0;transform:scale(2);display:none" data-anchor-target="#accueil">
+	<h1 class="<?php echo esc_attr($main_title_class) ?>" data-top="opacity:1;transform:scale(1);display:<?php if( display_header_text() ) : ?>block<?php else: ?>none<?php endif ?>" data-top-bottom="opacity:0;transform:scale(2);display:none" data-anchor-target="#accueil">
 		<span class="slabtext"><?php bloginfo( 'name' ) ?></span>
 	</h1>
 	<a class="scrolldown" title="<?php _e('Read next ...', 'skrollr') ?>" href="#chapo">
@@ -16,16 +16,16 @@
 </header>
 
 <div id="chapo" class="one-column clearfix row">
-	<div class="title-column <?php echo $class['title'] ?>"><?php
+	<div class="title-column <?php echo esc_attr($class['title']) ?>"><?php
 		echo Skrollr_Header_Description::get_instance()->get_title();
 	?></div>
-	<div class="text-column <?php echo $class['content'] ?>"><?php 
+	<div class="text-column <?php echo esc_attr($class['content']) ?>"><?php 
 		echo Skrollr_Header_Description::get_instance()->get_desc();
 	?></div>
 
 	<?php if( current_user_can( 'edit_theme_options' ) ) : ?>
 	<a class="post-edit-link" href="<?php echo admin_url( 'customize.php') . '?autofocus[control]=blogdescription'; ?>">
-		<span class="icons icomoon-edit" title="Modifier"></span>
+		<?php printf( '<span class="icons icomoon-edit" title="%s"></span>', __( 'Edit', 'skrollr' ) ); ?>
 	</a>
 	<?php endif; ?>
 </div>

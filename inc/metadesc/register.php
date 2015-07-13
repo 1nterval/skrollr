@@ -97,7 +97,7 @@ class Skrollr_Header_Description {
 		} else {
 			$desc = get_theme_mod( 'metadesc' );
 		}
-		return wpautop( "$desc" );
+		return wpautop( esc_html($desc) );
 	}
 
 	function get_title(){
@@ -112,7 +112,7 @@ class Skrollr_Header_Description {
 		} else {
 			$title = trim( get_bloginfo( 'description' ) );
 		}
-		return $title != '' ? "<h2>$title</h2>" : '';
+		return $title != '' ? '<h2>' . esc_html( $title ) . '</h2>' : '';
 	}
 }
 

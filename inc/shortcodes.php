@@ -313,7 +313,7 @@ class Skrollr_Gallery {
 			list( $image_url ) = wp_get_attachment_image_src( $id, 'fullsize', false );
 			$image_meta  = wp_get_attachment_metadata( $id );
 
-			$output .= '<figure class="' . $this->atts['skrollr'] . '" ';
+			$output .= '<figure class="' . esc_attr($this->atts['skrollr']) . '" ';
 
 			// version "fondu" :
 			if( $this->atts['skrollr'] == 'meld' ) {
@@ -341,29 +341,29 @@ class Skrollr_Gallery {
 				$legend_style = 'position:absolute;top:0;';
 			}
 
-			$output .= 'style="' . $style;
+			$output .= 'style="' . esc_attr($style);
 			if( $this->atts['skrollr'] != 'volet' ) {
-				$output .= ' background-image:url(' . $image_url . ');';
+				$output .= ' background-image:url(' . esc_url($image_url) . ');';
 			}
 			$output .= '" ';
-			$output .= 'data-anchor-target="#' . $this->post->post_name . ' .the_gallery">';
+			$output .= 'data-anchor-target="#' . esc_attr($this->post->post_name) . ' .the_gallery">';
 
 			if( $this->atts['skrollr'] == 'volet' ) {
-				$output .= '<img style="width:100%;" src="'.$image_url.'"/>';
+				$output .= '<img style="width:100%;" src="' . esc_url($image_url) . '"/>';
 			}
 
 			if( trim($attachment->post_excerpt) || trim($attachment->post_title) ) {
-				$output .= '<figcaption style="' . $legend_style . '" ';
+				$output .= '<figcaption style="' . esc_attr($legend_style) . '" ';
 				$output .= 'data--' . ( ($i*2)*100 ) . 'p-bottom-top="opacity:1" ';
 				$output .= 'data--' . ( ($i*2+1)*100 ) . 'p-bottom-top="opacity:1" ';
 				$output .= 'data--' . ( ($i*2+1)*100 + 20 ) . 'p-bottom-top="opacity:0" ';
-				$output .= 'data-anchor-target="#' . $this->post->post_name . ' .the_gallery"';
+				$output .= 'data-anchor-target="#' . esc_attr($this->post->post_name) . ' .the_gallery"';
 				$output .= '>';
 				if( trim($attachment->post_title) ) {
-					$output .= '<h2>'.$attachment->post_title.'</h2>';
+					$output .= '<h2>' . $attachment->post_title . '</h2>';
 				}
 				if( trim($attachment->post_excerpt) ) {
-					$output .= '<p>'.$attachment->post_excerpt.'</p>';
+					$output .= '<p>' . $attachment->post_excerpt . '</p>';
 				}
 				$output .= '</figcaption>';
 			}
