@@ -10,7 +10,6 @@ class Skrollr_Header_Description {
 	function __construct(){
 		self::$instance = $this;
 		add_action( 'customize_register', array( $this, 'register_settings' ) );
-		add_filter( 'pre_update_option_wpseo_titles', array( $this, 'sync_theme_mod' ), 10, 2 );
 		add_action( 'customize_preview_init', array( $this, 'live_preview' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'link_to_customizer' ) );
 	}
@@ -30,11 +29,10 @@ class Skrollr_Header_Description {
 		}
 
 		// meta description setting
-		$wpseo_titles = get_option( 'wpseo_titles' );
 		$wp_customize->add_setting( 'metadesc', array(
-			'default'   => $wpseo_titles['metadesc-home-wpseo'], // default to WP SEO meta desc
+			'default'   => '',
 			'transport' => 'postMessage',
-			'sanitize_callback' => array( $this, 'sync_back_option')
+			'sanitize_callback' => 'sanitize_text_field',
 		) );
 
 		$wp_customize->add_control( 'metadesc', array(
@@ -47,36 +45,16 @@ class Skrollr_Header_Description {
 
 	}
 
-	// When WPSEO option is updated, sync theme mod
-	function sync_theme_mod( $value, $old_value ){
-		if( $value['metadesc-home-wpseo'] != $old_value['metadesc-home-wpseo'] ){
-			set_theme_mod( 'metadesc', sanitize_text_field( $value['metadesc-home-wpseo'] ) );
-		}
-		return $value;
-	}
-
-	// When customizer Save & Publish button is clicked and metadesc is updated,
-	// sync it back to WPSEO option
-	function sync_back_option( $value ){
-		$value = sanitize_text_field( $value );
-		$option = get_option( 'wpseo_titles' );
-		if( isset( $option['metadesc-home-wpseo'] ) ) {
-			$option['metadesc-home-wpseo'] = $value;
-			update_option( 'wpseo_titles', $option );
-		}
-		return $value;
-	}
-
 	function live_preview(){
 		$ver = defined('THEME_ASSETS_VERSION') ? THEME_ASSETS_VERSION : false;
-		wp_enqueue_script( 'wpseo-customizer', get_template_directory_uri().'/inc/metadesc/theme_customizer.js', array( 'jquery','customize-preview' ), $ver, true);
+		wp_enqueue_script( 'skrollr-metadesc-customizer', get_template_directory_uri().'/inc/metadesc/theme_customizer.js', array( 'jquery','customize-preview' ), $ver, true);
 	}
 
 	function link_to_customizer(){
 		$ver = defined('THEME_ASSETS_VERSION') ? THEME_ASSETS_VERSION : false;
 		if( !is_customize_preview() && current_user_can( 'edit_theme_options' ) ) {
-			wp_enqueue_script( 'wpseo-customizer-link', get_template_directory_uri().'/inc/metadesc/customizer_link.js', array( 'jquery' ), $ver, true);
-			wp_localize_script( 'wpseo-customizer-link', 'customizer_url', admin_url( 'customize.php') );
+			wp_enqueue_script( 'skrollr-metadesc-customizer-link', get_template_directory_uri().'/inc/metadesc/customizer_link.js', array( 'jquery' ), $ver, true);
+			wp_localize_script( 'skrollr-metadesc-customizer-link', 'customizer_url', admin_url( 'customize.php') );
 		}
 	}
 
