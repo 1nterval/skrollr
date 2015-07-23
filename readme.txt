@@ -2,8 +2,8 @@
 Contributors: the WordPress team
 Tags: gray, one-column, fluid-layout, responsive-layout, custom-colors, custom-header, custom-menu, featured-images, post-formats, translation-ready
 Requires at least: 4.1
-Tested up to: 4.2.2
-Stable tag: 1.0.6
+Tested up to: 4.2.3
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,5 +41,5 @@ SIL OPEN FONT LICENSE
 Example header image : Magic Book
 Copyright Cole Greyis on Deviant Art
 http://chabien.deviantart.com/art/Magic-Book-By-Colgreyis-546067590
-Creative Commons Attribution 3.0 License (http://creativecommons.org/licenses/by/3.0/)
+Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0/)
 
