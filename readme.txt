@@ -3,7 +3,7 @@ Contributors: the WordPress team
 Tags: gray, one-column, fluid-layout, responsive-layout, custom-colors, custom-header, custom-menu, featured-images, post-formats, translation-ready
 Requires at least: 4.1
 Tested up to: 4.2.3
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
