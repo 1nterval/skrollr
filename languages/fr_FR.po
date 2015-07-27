@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Skrollr 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/skrollr\n"
-"POT-Creation-Date: 2015-07-09 09:01:15+00:00\n"
-"PO-Revision-Date: 2015-07-09 11:03+0100\n"
+"POT-Creation-Date: 2015-07-27 13:13:30+00:00\n"
+"PO-Revision-Date: 2015-07-27 15:16+0100\n"
 "Last-Translator: Fabien Quatravaux <fabien.quatravaux@1nterval.com>\n"
 "Language-Team: Fabien Quatravaux <fabien.quatravaux@1nterval.com>\n"
 "Language: fr_FR\n"
@@ -24,6 +24,14 @@ msgid "One Response to %2$s"
 msgid_plural "%1$s Responses to %2$s"
 msgstr[0] "Une réponse à %2$s"
 msgstr[1] "%1$s réponses à %2$s"
+
+#: header.php:4
+msgid ""
+"You are using an <strong>outdated</strong> browser. Please <a href=\"%s"
+"\">upgrade your browser</a> to improve your experience"
+msgstr ""
+"Vous utilisez un navigateur <strong>obsolète</strong>. Merci de <a href=\"%s"
+"\">mettre à jour</a> votre navigateur pour améliorer votre satisfaction."
 
 #: inc/content_colors/register.php:46
 msgid "Background color"
@@ -97,11 +105,11 @@ msgstr "Non classé"
 msgid "Categories: "
 msgstr "Categories: "
 
-#: inc/metadesc/register.php:41
+#: inc/metadesc/register.php:39
 msgid "Meta description"
 msgstr "Meta description"
 
-#: inc/metadesc/register.php:85
+#: inc/metadesc/register.php:63
 msgid ""
 "Sorry, but the page you were trying to view does not exist. \n"
 "\n"
@@ -113,45 +121,45 @@ msgstr ""
 "Il semble que cela est du soit à une adresse mal tapée, soit à un lien "
 "périmé."
 
-#: inc/metadesc/register.php:93
+#: inc/metadesc/register.php:71
 msgid "Nothing found"
 msgstr "Rien n'a été trouvé"
 
-#: inc/metadesc/register.php:95
+#: inc/metadesc/register.php:73
 msgid "One post found."
 msgid_plural "%d posts found"
 msgstr[0] "Un article trouvé."
 msgstr[1] "%d articles trouvés"
 
-#: inc/metadesc/register.php:105
+#: inc/metadesc/register.php:83
 msgid "404, Page not found"
 msgstr "404, Page non trouvée"
 
-#: inc/metadesc/register.php:111
+#: inc/metadesc/register.php:89
 msgid "Search results for \"%s\""
 msgstr "Résultats de recherche pour \"%s\""
 
-#: inc/shortcodes.php:52
+#: inc/shortcodes.php:53
 msgid "Gallery Settings"
 msgstr "Réglages de la galerie"
 
-#: inc/shortcodes.php:56
+#: inc/shortcodes.php:57
 msgid "Gallery type"
 msgstr "Type de galerie"
 
-#: inc/shortcodes.php:60
+#: inc/shortcodes.php:61
 msgid "Melded"
 msgstr "Fondu"
 
-#: inc/shortcodes.php:63
+#: inc/shortcodes.php:64
 msgid "Rolling up"
 msgstr "Déroulé de bas en haut"
 
-#: inc/shortcodes.php:66
+#: inc/shortcodes.php:67
 msgid "Rolling down"
 msgstr "Déroulé de haut en bas"
 
-#: inc/shortcodes.php:69
+#: inc/shortcodes.php:70
 msgid "Shutter"
 msgstr "Volet"
 
@@ -164,7 +172,7 @@ msgid "Twitter URL"
 msgstr "Lien Twitter"
 
 #: templates/block-gallery.php:28 templates/block-video.php:2
-#: templates/block.php:17
+#: templates/block.php:17 templates/chapo.php:28
 msgid "Edit"
 msgstr "Modifier"
 
