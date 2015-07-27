@@ -11,7 +11,8 @@ class Skrollr_Shortcodes {
 		self::$instance = $this;
 		add_filter( 'wp_video_shortcode_override', array( $this, 'video_shortcode'), 10, 4);
 		add_filter( 'post_gallery', array( $this, 'gallery_shortcode'), 10, 2 );
-		add_action( 'wp_enqueue_media', array( $this, 'gallery_settings_template' ) );
+		add_action( 'admin_footer', array( $this, 'gallery_settings_template' ) );
+		add_action( 'customize_controls_print_footer_scripts', array( $this, 'gallery_settings_template' ) );
 	}
 
 	/**
