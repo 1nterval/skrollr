@@ -17,6 +17,7 @@ No click or tap is needed to view the content.
 == Copyright ==
 Skrollr Theme Copyright 1nterval - Fabien Quatravaux 2015
 Skrollr Theme is distributed under the terms of the GPLv2 or later
+Graphic design: Gauthier Mesnil-Blanc - http://www.ostrogo.fr
 
 == External resources ==
 skrollr Javascript library
