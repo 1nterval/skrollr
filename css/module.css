@@ -229,7 +229,7 @@ html.skrollr, .skrollr body {
 /* ==========================================================================
    MediaElement Player
    ========================================================================== */
-.mejs-video .mejs-container .mejs-controls {
+.mejs-video.mejs-container .mejs-controls {
 	height: 15px;
 	background: transparent;
 }
