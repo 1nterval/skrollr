@@ -49,6 +49,10 @@ class Skrollr_Shortcodes {
 	function gallery_settings_template(){
 		global $pagenow;
 		if( $pagenow != 'post.php' ) return;
+
+		$post = get_post();
+		if( get_post_format( $post->ID ) != 'gallery' ) return;
+
 		?><script type="text/html" id="tmpl-skrollr-gallery-settings">
 			<h3><?php _e('Gallery Settings', 'skrollr'); ?></h3>
 
@@ -234,6 +238,7 @@ class Skrollr_Shortcodes {
 	*/
 	function gallery_shortcode( $output, $attr ){
 		$post = get_post();
+		if( get_post_format( $post->ID ) != 'gallery' ) return;
 
 		static $instance = 0;
 		$instance++;
@@ -283,7 +288,7 @@ class Skrollr_Shortcodes {
 
 		// Skrollr: remove unused backward compatibility code
 
-		$gallery = new $this->gallery_class($post, $attachments, $atts);
+		$gallery = new $this->gallery_class($post, $attachments, $atts, $instance);
 		$output .= $gallery->render();
 
 		return $output;
@@ -297,11 +302,13 @@ class Skrollr_Gallery {
 	private $post;
 	private $attachments;
 	private $atts;
+	private $instance;
 
-	function __construct($post, $attachments, $atts) {
+	function __construct($post, $attachments, $atts, $instance) {
 		$this->post = $post;
 		$this->attachments = $attachments;
 		$this->atts = $atts;
+		$this->instance = $instance;
 	}
 
 	function render() {
@@ -347,7 +354,7 @@ class Skrollr_Gallery {
 				$output .= ' background-image:url(' . esc_url($image_url) . ');';
 			}
 			$output .= '" ';
-			$output .= 'data-anchor-target="#' . esc_attr($this->post->post_name) . ' .the_gallery">';
+			$output .= 'data-anchor-target="#' . esc_attr($this->post->post_name) . ' .gal-' . $this->instance . '">';
 
 			if( $this->atts['skrollr'] == 'volet' ) {
 				$output .= '<img style="width:100%;" src="' . esc_url($image_url) . '"/>';
@@ -358,7 +365,7 @@ class Skrollr_Gallery {
 				$output .= 'data--' . ( ($i*2)*100 ) . 'p-bottom-top="opacity:1" ';
 				$output .= 'data--' . ( ($i*2+1)*100 ) . 'p-bottom-top="opacity:1" ';
 				$output .= 'data--' . ( ($i*2+1)*100 + 20 ) . 'p-bottom-top="opacity:0" ';
-				$output .= 'data-anchor-target="#' . esc_attr($this->post->post_name) . ' .the_gallery"';
+				$output .= 'data-anchor-target="#' . esc_attr($this->post->post_name) . ' .gal-' . $this->instance . '"';
 				$output .= '>';
 				if( trim($attachment->post_title) ) {
 					$output .= '<h2>' . $attachment->post_title . '</h2>';

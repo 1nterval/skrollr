@@ -92,10 +92,11 @@ jQuery(function($){
 	function setupBlocks(){
 		$('.block-0').height($(window).height());
 		$('.sk-gallery > figure, .wp-video').height($(window).height() + 50);
-		$('.gallery').each(function(index, gal){
-			var $skgal = $('.sk-gallery[data-anchor-target="#' + gal.id + ' .the_gallery"]');
+		$('.gallery .the_gallery').each(function(index, gal){
+			var sel = '#' + $(gal).parent().attr('id') + ' .gal-' + $(gal).attr('data-instance');
+			var $skgal = $('.sk-gallery[data-anchor-target="' + sel + '"]');
 			var nbimages = $skgal.find('[name="nbimages"]').attr('content');
-			$(gal).find('.the_gallery').height( $(window).height() * 2 * nbimages );
+			$(gal).height( $(window).height() * 2 * nbimages );
 		});
 		$('.video').height($(window).height()*1.5);
 	}
