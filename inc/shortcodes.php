@@ -88,6 +88,9 @@ class Skrollr_Shortcodes {
 		global $content_width;
 		$post_id = get_post() ? get_the_ID() : 0;
 
+		// do not modify video display on the admin side
+		if( is_admin() ) return '';
+
 		static $instances = 0;
 		$instances++;
 		$video = null;
