@@ -1,8 +1,8 @@
 {
-	"name": "skrollr",
-	"title": "Skrollr",
+	"name": "skrollr-wp-theme",
+	"title": "Skrollr WordPress Theme",
 	"description": "A WordPress theme to tell stories with Skrollr js library",
-	"version": "1.0.0",
+	"version": "1.0.9",
 	"author": {
 		"name": "Fabien Quatravaux",
 		"email": "fabien.quatravaux@1nterval.com",
@@ -15,8 +15,9 @@
 	},
 	"keywords": [
 		"skrollr",
-		"raconter",
-		"histoire",
+		"telling stories",
+		"story",
+		"long form",
 		"wordpress",
 		"theme"
 	],
