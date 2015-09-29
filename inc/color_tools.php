@@ -79,6 +79,10 @@ class Skrollr_Color_Tools {
 		return ($v1);
 	}
 
+	static function hexpadleft($v){
+		return str_pad(dechex($v*255), 2, '0', STR_PAD_LEFT);
+	}
+
 	/**
 	* convert HSL to RGB
 	*/
@@ -102,7 +106,7 @@ class Skrollr_Color_Tools {
 	
 		if($format == 'float') return array($red, $green, $blue);
 		else if($format == 'dec') return array($red*255, $green*255, $blue*255);
-		else if($format == 'hex') return implode('', array_map(function($v){ return str_pad(dechex($v*255), 2, '0', STR_PAD_LEFT); }, array($red, $green, $blue)));
+		else if($format == 'hex') return implode('', array_map('Skrollr_Color_Tools::hexpadleft', array($red, $green, $blue)));
 	}
 
 	/**

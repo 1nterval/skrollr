@@ -14,7 +14,7 @@ class Skrollr_Footer_Menu {
 	function __construct(){
 		self::$instance = $this;
 		add_action( 'after_setup_theme', array( $this, 'register_nav_menu' ) );
-		add_filter( 'mediahelper_image_link_size', function($size){ return array(250, 120, true); } );
+		add_filter( 'mediahelper_image_link_size', array( $this, 'image_link_size' ) );
 		add_action( 'widgets_init', array( $this, 'register_sidebar' ) );
 	}
 
@@ -25,6 +25,10 @@ class Skrollr_Footer_Menu {
 	*/
 	static function get_instance() {
 		return self::$instance;
+	}
+
+	function image_link_size($size){
+		return array(250, 120, true);
 	}
 
 	/**
