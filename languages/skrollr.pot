@@ -40,6 +40,37 @@ msgstr ""
 msgid "Text color"
 msgstr ""
 
+#: inc/credits/register.php:30 inc/credits/register.php:43
+msgid "Credits"
+msgstr ""
+
+#: inc/credits/register.php:31
+msgid ""
+"<h2>Credits</h2>\n"
+"WordPress theme by <a href=\"http://www.1nterval.com\" target=\"_blank"
+"\">1nterval</a>\n"
+"Development : <a href=\"http://fab1en.github.io/\" target=\"_blank\">Fabien "
+"Quatravaux</a>\n"
+"Graphic Design: <a href=\"http://www.ostrogo.fr\" target=\"_blank\">Gauthier "
+"Mesnil-Blanc</a>"
+msgstr ""
+
+#: inc/credits/register.php:54
+msgid "Display credits popup"
+msgstr ""
+
+#: inc/credits/register.php:68
+msgid "Credits link title"
+msgstr ""
+
+#: inc/credits/register.php:79
+msgid "Credits popup content"
+msgstr ""
+
+#: inc/credits/register.php:135
+msgid "Close"
+msgstr ""
+
 #: inc/footermenu.php:34
 msgid "Footer menu"
 msgstr ""
@@ -92,11 +123,11 @@ msgstr ""
 msgid "Drag the logo around with your mouse to change its position"
 msgstr ""
 
-#: inc/metadata.php:38
+#: inc/metadata.php:39
 msgid "Uncategorized"
 msgstr ""
 
-#: inc/metadata.php:42
+#: inc/metadata.php:43
 msgid "Categories: "
 msgstr ""
 
@@ -142,7 +173,7 @@ msgctxt "anchor"
 msgid "bottom"
 msgstr ""
 
-#: inc/navmenu/register.php:43
+#: inc/navmenu/register.php:42
 msgid "Top"
 msgstr ""
 
@@ -178,7 +209,7 @@ msgstr ""
 msgid "Twitter URL"
 msgstr ""
 
-#: templates/block-gallery.php:49 templates/block-video.php:2
+#: templates/block-gallery.php:55 templates/block-video.php:8
 #: templates/block.php:17 templates/chapo.php:31
 msgid "Edit"
 msgstr ""

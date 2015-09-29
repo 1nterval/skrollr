@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Skrollr 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/skrollr\n"
 "POT-Creation-Date: 2015-09-28 19:11:41+00:00\n"
-"PO-Revision-Date: 2015-09-28 21:13+0100\n"
+"PO-Revision-Date: 2015-09-29 03:27+0100\n"
 "Last-Translator: Fabien Quatravaux <fabien.quatravaux@1nterval.com>\n"
 "Language-Team: Fabien Quatravaux <fabien.quatravaux@1nterval.com>\n"
 "Language: fr_FR\n"
@@ -44,6 +44,44 @@ msgstr "Couleur de fond état actif"
 #: inc/content_colors/register.php:56
 msgid "Text color"
 msgstr "Couleur de texte"
+
+#: inc/credits/register.php:30 inc/credits/register.php:43
+msgid "Credits"
+msgstr "Crédits"
+
+#: inc/credits/register.php:31
+msgid ""
+"<h2>Credits</h2>\n"
+"WordPress theme by <a href=\"http://www.1nterval.com\" target=\"_blank"
+"\">1nterval</a>\n"
+"Development : <a href=\"http://fab1en.github.io/\" target=\"_blank\">Fabien "
+"Quatravaux</a>\n"
+"Graphic Design: <a href=\"http://www.ostrogo.fr\" target=\"_blank\">Gauthier "
+"Mesnil-Blanc</a>"
+msgstr ""
+"<h2>Crédits</h2>\n"
+"Thème WordPress par <a href=\"http://www.1nterval.com\" target=\"_blank"
+"\">1nterval</a>\n"
+"Développement : <a href=\"http://fab1en.github.io/\" target=\"_blank"
+"\">Fabien Quatravaux</a>\n"
+"Design graphique: <a href=\"http://www.ostrogo.fr\" target=\"_blank"
+"\">Gauthier Mesnil-Blanc</a>"
+
+#: inc/credits/register.php:54
+msgid "Display credits popup"
+msgstr "Afficher la fenêtre des crédits"
+
+#: inc/credits/register.php:68
+msgid "Credits link title"
+msgstr "Titre du lien de la fenêtre des crédits"
+
+#: inc/credits/register.php:79
+msgid "Credits popup content"
+msgstr "Contenu de la fenêtre des crédits"
+
+#: inc/credits/register.php:135
+msgid "Close"
+msgstr "Fermer"
 
 #: inc/footermenu.php:34
 msgid "Footer menu"
@@ -97,11 +135,11 @@ msgstr "Position du logo"
 msgid "Drag the logo around with your mouse to change its position"
 msgstr "Déplacer le logo avec votre souris pour changer sa position"
 
-#: inc/metadata.php:38
+#: inc/metadata.php:39
 msgid "Uncategorized"
 msgstr "Non classé"
 
-#: inc/metadata.php:42
+#: inc/metadata.php:43
 msgid "Categories: "
 msgstr "Categories: "
 
@@ -151,7 +189,7 @@ msgctxt "anchor"
 msgid "bottom"
 msgstr "bas-de-page"
 
-#: inc/navmenu/register.php:43
+#: inc/navmenu/register.php:42
 msgid "Top"
 msgstr "Haut de page"
 
@@ -187,7 +225,7 @@ msgstr "Lien Facebook"
 msgid "Twitter URL"
 msgstr "Lien Twitter"
 
-#: templates/block-gallery.php:49 templates/block-video.php:2
+#: templates/block-gallery.php:55 templates/block-video.php:8
 #: templates/block.php:17 templates/chapo.php:31
 msgid "Edit"
 msgstr "Modifier"
@@ -229,6 +267,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://fab1en.github.io"
 msgstr ""
+
+#~ msgid "<h2>Credits</h2>"
+#~ msgstr "<h2>Crédits</h2>"
 
 #~ msgid "Main navigation menu"
 #~ msgstr "Menu de navigation principal"
