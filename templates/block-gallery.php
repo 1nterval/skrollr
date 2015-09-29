@@ -20,7 +20,7 @@
 	$show_title = (trim( strip_shortcodes( $content ) ) != '' || $multipage );
 
 ?><div <?php post_class(); ?> id="<?php echo esc_attr($post->post_name) ?>">
-	<?php // afficher le contenu sans la galerie
+	<?php // display the content without gallery
 	foreach ( $content_parts as $i => $part ) :
 		if( $show_title ) :  ?>
 		<div class="one-column row">
@@ -42,7 +42,13 @@
 			$content_parts[$i][2] = $content_parts[$i][1] + sizeof($content_parts[$i][0]);
 			$instance = skrollr_blockgal_get_instance();
 			?>
-			<div class="the_gallery gal-<?php echo $instance; ?>" data-instance="<?php echo $instance; ?>"></div>
+			<div class="the_gallery gal-<?php echo $instance; ?>" 
+				data-instance="<?php echo $instance; ?>"
+				style="display: block;background: #eaeaea;position:static;" 
+				data-bottom-top="opacity:1;"
+				data-center-top="opacity:0;"
+				data-bottom="opacity:0;"
+				data-center-bottom="opacity:1;"></div>
 		<?php }
 	endforeach; ?>
 

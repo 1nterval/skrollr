@@ -9,15 +9,21 @@ jQuery(function($){
 			forceHeight: false,
 			render: function(data) {
 
-				// arrêter les vidéos qui ne sont pas visibles
+				// stop non-visible videos
 				$('.sk-video.skrollable-before, .sk-video.skrollable-after').each(function(i, e){
 					var player1 = $(e).data('player');
-					if( player1 && player1.media && !player1.media.paused ) {
-						player1.saveTime = player1.media.currentTime;
-						player1.pause();
-						// forcer l'arrêt du chargement de la vidéo
-						player1.setSrc('');
-						player1.load();
+					if( player1 && player1.media ){
+
+						if( !player1.media.paused ) {
+							player1.saveTime = player1.media.currentTime;
+							player1.pause();
+						}
+
+						// force video loading to stop
+						if( player1.media.src == player1.saveSrc && player1.media.pluginType == 'native' && !mejs.MediaFeatures.hasTouch ) {
+							player1.setSrc('');
+							player1.load();
+						}
 					}
 				});
 
@@ -28,24 +34,35 @@ jQuery(function($){
 					if(!$nav.parent().hasClass('menu')) slidingMenu.slideFor($nav.index());
 				}
 
-				// démarrer la vidéo visible
+				// start visible video
 				$currentVideo = $('.sk-video.skrollable-between');
 				var player2 = $currentVideo.data('player');
-				if( player2 && player2.media && $currentVideo.css('opacity') >= 0.5 ) {
-					if( player2.media.paused && !player2.pausedByUser ) {
-						// restaurer la source
-						player2.setSrc( player2.saveSrc );
-						player2.load();
+				if( player2 && player2.media ) {
+					if( player2.media.paused && !player2.pausedByUser  ) {
+						// restore the video source
+						if( player2.media.pluginType == 'native' && !mejs.MediaFeatures.hasTouch ) {
+							player2.setSrc( player2.saveSrc );
+							player2.load();
+						}
 						player2.play();
 						player2.startControlsTimer();
 
-						// et le temps
-						var setSavedTime = function(){
-							player2.setCurrentTime( player2.saveTime );
-							player2.media.removeEventListener( 'playing', setSavedTime );
+						// for flash, we have to wait for canplay event
+						var readyToPlay = function(){
+							player2.play();
+							player2.media.removeEventListener( 'canplay', readyToPlay );
 						}
-						if( player2.saveTime ) {
-							player2.media.addEventListener( 'playing', setSavedTime);
+						player2.media.addEventListener( 'canplay', readyToPlay);
+
+						if( player2.media.pluginType == 'native' && !mejs.MediaFeatures.hasTouch ) {
+							// restore the video time
+							var setSavedTime = function(){
+								player2.setCurrentTime( player2.saveTime );
+								player2.media.removeEventListener( 'playing', setSavedTime );
+							}
+							if( player2.saveTime ) {
+								player2.media.addEventListener( 'playing', setSavedTime);
+							}
 						}
 					}
 				}
@@ -61,17 +78,32 @@ jQuery(function($){
 			$(this).removeClass('active');
 		});
 
-		$('.block.video').click(function(){
+		// forward click event the the video timeline
+		$('.block.video').on( 'mousedown', function(e){
+			var player, forwardEvent;
+			if(player = $(this).data('player')) {
+				if( $(window).height() - e.clientY <= 50 ) {
+					try {
+						forwardEvent = new MouseEvent(e.type, e);
+					} catch (error) {
+						forwardEvent = document.createEvent('MouseEvent');
+						forwardEvent.initEvent(e.type, true, true);
+					}
+					player.controls.find('.mejs-time-total')[0].dispatchEvent(forwardEvent);
+				}
+			}
+		});
+		$('.block.video').click(function(e){
 			var player;
 			if(player = $(this).data('player')) {
-				if( player.pausedByUser ) {
+				if( $(window).height() - e.clientY <= 50 ) {
+					// reserved area for timeline
+				} else if( player.media.paused ) {
 					player.pausedByUser = false;
 					player.play();
-					$(this).find('figcaption').fadeOut();
 				} else {
 					player.pausedByUser = true;
 					player.pause();
-					$(this).find('figcaption').fadeIn();
 				}
 			}
 		}).mousemove(function(){
@@ -82,12 +114,19 @@ jQuery(function($){
 			}
 		});
 
+		// avoid moving video blocks on iOS
+		$('.sk-video').on( 'touchmove', function(e) {
+			e.preventDefault();
+			return false;
+		} );
+
 		$('.block').not('.block-0').mousemove(throttle(displaySharing, 1000));
 		$('.partage').fadeOut();
 
 		$(window).resize(function(){
 			setupBlocks();
 			resizeVideos();
+			s.refresh();
 		});
 	}
 
@@ -128,10 +167,15 @@ jQuery(function($){
 				var $block = $($vid.attr('data-anchor-target'));
 				$block.data('player', player);
 
-				// cacher le titre en même temps que les contrôles
-				player.container.on( 'controlshidden', function(){
-					$block.find( 'figcaption' ).fadeOut();
-				})
+				player.pausedByUser = false;
+
+				// for iPhone, article cannot be scrolled when video is playing
+				// and video is paused without click event on the video element
+				if( mejs.MediaFeatures.isiPhone ) {
+					media.addEventListener( 'pause', function(e){
+						player.pausedByUser = true;
+					} );
+				}
 			}
 		});
 	}

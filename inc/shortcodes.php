@@ -183,7 +183,7 @@ class Skrollr_Shortcodes {
 			'poster'   => esc_url( $atts['poster'] ),
 			'loop'     => $atts['loop'],
 			'autoplay' => $atts['autoplay'],
-			'preload'  => 'none',
+			'preload'  => $atts['preload'],
 		);
 
 		// These ones should just be omitted altogether if they are blank
@@ -230,6 +230,18 @@ class Skrollr_Shortcodes {
 
 		$html .= wp_mediaelement_fallback( $fileurl );
 		$html .= '</video>';
+
+		// use the post content as a legend
+		global $post;
+		$content = strip_shortcodes(get_the_content());
+		if( trim($content) != '' ) {
+			$html .= "<figcaption ";
+			$html .= "data--0p-bottom-top=\"opacity:1\" ";
+			$html .= "data--100p-bottom-top=\"opacity:1\" ";
+			$html .= "data--120p-bottom-top=\"opacity:0\"";
+			$html .= "data-anchor-target=\"#$post->post_name\" ";
+			$html .= ">$content</figcaption>";
+		}
 
 		// Skrollr : remove width and height rules
 		return sprintf( '<div class="wp-video">%s</div>', $html );

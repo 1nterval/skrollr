@@ -12,18 +12,16 @@
 	$pattern = get_shortcode_regex();
 	$content_parts = preg_split( "/$pattern/s", $content, -1, PREG_SPLIT_OFFSET_CAPTURE );
 
+	// display only galleries here
 	foreach ( $content_parts as $i => $part ) :
 		if( isset( $content_parts[$i] ) && isset( $content_parts[$i+1] ) ) :
 			$start = $content_parts[$i][1] + strlen($content_parts[$i][0]);
 			$len = $content_parts[$i+1][1] - $start + 1;
 			$instance = skrollr_mediagal_get_instance();
-			?><div class="sk-gallery"
+			?><div class="sk-gallery" style="display:block;opacity:1;"
 				data-1p-bottom-top="display:none;top:0"
-				data-bottom-top="display:block;opacity:0;"
-				data-center-top="display:block;opacity:1;"
-				data-center-bottom="display:block;opacity:1;"
-				data-top-bottom="display:block;opacity:0;"
-				data--1p-top-bottom="display:none"
+				data-bottom-top="display:block;"
+				data-center-bottom="display:none;"
 				data-anchor-target="#<?php echo $post->post_name ?> .gal-<?php echo $instance; ?>">
 					<?php  echo apply_filters( 'the_content', substr( $content, $start, $len ) ); ?>
 			</div><?php 

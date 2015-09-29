@@ -232,6 +232,7 @@ html.skrollr, .skrollr body {
 .mejs-video.mejs-container .mejs-controls {
 	height: 15px;
 	background: transparent;
+	bottom: 40px;
 }
 
 .mejs-video .mejs-controls div.mejs-time-rail {

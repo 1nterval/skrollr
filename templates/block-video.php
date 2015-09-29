@@ -1,15 +1,10 @@
 <div <?php post_class(); ?> id="<?php echo $post->post_name ?>">
+	<div class="the_video" 
+		style="display: block;background: #eaeaea;position:static; height:100%" 
+		data-bottom-top="opacity:1;"
+		data-center-top="opacity:0;"
+		data-bottom="opacity:0;"
+		data-center-bottom="opacity:1;">
 	<?php edit_post_link( sprintf( '<span class="icons icomoon-edit" title="%s"></span>', __( 'Edit', 'skrollr' ) ) ); ?>
-
-	<?php
-		// ne pas afficher la vidéo ici
-		add_filter( 'the_content', array( Skrollr_Shortcodes::get_instance(), 'remove_shortcodes' ) );
-		$content = get_the_content();
-		$content = apply_filters( 'the_content', $content );
-		$content = str_replace( ']]>', ']]&gt;', $content );
-		if( trim($content) != '' ) : ?>
-			<figcaption><?php echo $content; ?></figcaption>
-		<?php endif;
-		remove_filter( 'the_content', array( Skrollr_Shortcodes::get_instance(), 'remove_shortcodes' ) );
-	?>
+	</div>
 </div>

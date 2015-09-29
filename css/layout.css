@@ -5,11 +5,19 @@
    ========================================================================== */
 
 .block-0 {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 	background-size:cover;
-	background-attachment:fixed;
 	background-repeat:no-repeat;
 	background-position:50%;
 	overflow:hidden;
+}
+ 
+@media (min-width: 768px) {
+	.block-0 {
+		background-attachment:fixed;
+	}
 }
 
 .block-0 > h1 {
@@ -55,6 +63,10 @@
 	width: 100%;
 	text-align: center;
 	z-index: 150;
+}
+
+.scrolldown:active, .scrolldown:focus {
+	outline: 0;
 }
 
 .scrolldown:after {
@@ -162,11 +174,17 @@ blockquote > p:after {
 }
 
 .sk-gallery  figcaption,
-.block.video figcaption {
+.sk-video figcaption {
 	width: 70%;
 	margin: 8% 11%;
 	text-align: center;
 	padding: 2%;
+	top: 0;
+}
+
+.skrollr-mobile .skrollable.sk-video,
+.skrollr-mobile .skrollable.sk-gallery {
+	position: fixed;
 }
 
 /* 2 columns centered with 5% margin */
@@ -185,7 +203,13 @@ blockquote > p:after {
 
 .one-column .title-column {
 	margin: 1em 0;
-	text-align: right;
+	text-align: left;
+}
+ 
+@media (min-width: 992px) {
+	.one-column .title-column {
+		text-align: right;
+	}
 }
 
 
@@ -252,6 +276,7 @@ blockquote > p:after {
 
 #main-menu .menu .nav-item {
 	width: 48px;
+	outline: 0;
 }
 
 #main-menu .menu > .nav-item:first-child {

@@ -139,7 +139,7 @@ class Skrollr_Customize_Content_Colors {
 			}
 
 			.sk-gallery  figcaption,
-			.block.video figcaption {
+			.sk-video figcaption {
 				background: rgba(<?php echo implode(",", $bg_active_color_dec) ?>, 0.5);
 				color: <?php echo $txt_color ?>;
 			}

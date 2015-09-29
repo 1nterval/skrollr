@@ -152,7 +152,7 @@ blockquote > p:before, blockquote > p:after {
 }
 
 .sk-gallery  figcaption,
-.block.video figcaption {
+.sk-video figcaption {
 	background: rgba(182, 23, 19, 0.5);
 	color: white;
 }
@@ -243,31 +243,31 @@ blockquote > p:before, blockquote > p:after {
 }
 
 .sk-gallery  figcaption > h1,
-.block.video figcaption > h1,
+.sk-video figcaption > h1,
 .sk-gallery  figcaption > h2,
-.block.video figcaption > h2 {
+.sk-video figcaption > h2 {
 	text-transform: uppercase;
 	word-wrap: break-word;
 	margin: 0.5em 0;
 }
 
 .sk-gallery  figcaption > p,
-.block.video figcaption > p {
+.sk-video figcaption > p {
 	font-size: 1em;
 	font-weight: bold;
 }
 
 @media (min-width: 768px) {
 	.sk-gallery  figcaption > p,
-	.block.video figcaption > p {
+	.sk-video figcaption > p {
 		font-size: 2em;
 		font-weight: bold;
 	}
 
 	.sk-gallery  figcaption > h1,
-	.block.video figcaption > h1,
+	.sk-video figcaption > h1,
 	.sk-gallery  figcaption > h2,
-	.block.video figcaption > h2 {
+	.sk-video figcaption > h2 {
 		font-size: 3em;
 	}
 }
