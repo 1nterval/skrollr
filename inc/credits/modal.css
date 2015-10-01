@@ -23,10 +23,15 @@
 	width: 450px;
 	margin-left: -225px;
 	background: none repeat scroll 0% 0% #FFF;
+	color: #505050;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
 	line-height: 1.5;
 	z-index: 1000005;
 	padding: 0 2em;
+}
+
+.modal-display a {
+	color: #505050;
 }
 
 .modal-display .modal-close:before,

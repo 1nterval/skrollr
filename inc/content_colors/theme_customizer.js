@@ -1,6 +1,6 @@
 ( function( $ ) {
 
-	var bg, active, txt;
+	var bg, active, txt, content_bg, content_txt, desc_bg, desc_txt;
 
 	wp.customize( 'bg_color', function( value ) {
 		bg = value;
@@ -18,16 +18,32 @@
 
 	wp.customize( 'bg_active_color', function( value ) {
 		active = value;
-		value.bind( function( newval ) {
-			update_color_css();
-		} );
+		value.bind( update_color_css );
 	} );
 
 	wp.customize( 'txt_color', function( value ) {
 		txt = value;
-		value.bind( function( newval ) {
-			update_color_css();
-		} );
+		value.bind( update_color_css );
+	} );
+
+	wp.customize( 'content_bg_color', function( value ) {
+		content_bg = value;
+		value.bind( update_color_css );
+	} );
+
+	wp.customize( 'content_txt_color', function( value ) {
+		content_txt = value;
+		value.bind( update_color_css );
+	} );
+
+	wp.customize( 'desc_bg_color', function( value ) {
+		desc_bg = value;
+		value.bind( update_color_css );
+	} );
+
+	wp.customize( 'desc_txt_color', function( value ) {
+		desc_txt = value;
+		value.bind( update_color_css );
 	} );
 
 	function update_color_css(){
@@ -35,10 +51,14 @@
 			'bg':    encodeURIComponent( bg.get() ),
 			'active': encodeURIComponent( active.get() ),
 			'txt':   encodeURIComponent( txt.get() ),
+			'content_bg':   encodeURIComponent( content_bg.get() ),
+			'content_txt':   encodeURIComponent( content_txt.get() ),
+			'desc_bg':   encodeURIComponent( desc_bg.get() ),
+			'desc_txt':   encodeURIComponent( desc_txt.get() ),
 			'action': 'content-colors'
 		}, function(data) {
 			$( '#customized-content-colors' ).remove();
-			$( 'head' ).append( '<style>' + data + '</style>' );
+			$( 'head' ).append( '<style id="customized-content-colors">' + data + '</style>' );
 		} );
 	}
 

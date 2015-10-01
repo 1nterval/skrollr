@@ -41,6 +41,26 @@ class Skrollr_Customize_Content_Colors {
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
+		$wp_customize->add_setting( 'content_bg_color', array(
+			'default'   => '#eaeaea',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_setting( 'content_txt_color', array(
+			'default'   => '#505050',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_setting( 'desc_bg_color', array(
+			'default'   => '#dddddd',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_setting( 'desc_txt_color', array(
+			'default'   => '#505050',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bg_color', array(
 			'label'   => __('Background color', 'skrollr'),
@@ -57,6 +77,26 @@ class Skrollr_Customize_Content_Colors {
 			'section' => 'colors',
 			'settings' => 'txt_color'
 		) ) );
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'content_bg_color', array(
+			'label'   => __('Content background color', 'skrollr'),
+			'section' => 'colors',
+			'settings' => 'content_bg_color'
+		) ) );
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'content_txt_color', array(
+			'label'   => __('Content text color', 'skrollr'),
+			'section' => 'colors',
+			'settings' => 'content_txt_color'
+		) ) );
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'desc_bg_color', array(
+			'label'   => __('Description background color', 'skrollr'),
+			'section' => 'colors',
+			'settings' => 'desc_bg_color'
+		) ) );
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'desc_txt_color', array(
+			'label'   => __('Description text color', 'skrollr'),
+			'section' => 'colors',
+			'settings' => 'desc_txt_color'
+		) ) );
 	}
 
 	function render(){
@@ -64,7 +104,11 @@ class Skrollr_Customize_Content_Colors {
 		$this->get_css(
 			get_theme_mod('bg_color', '#505050'),
 			get_theme_mod('bg_active_color', '#b61713'),
-			get_theme_mod('txt_color', '#ffffff')
+			get_theme_mod('txt_color', '#ffffff'),
+			get_theme_mod('content_bg_color', '#eaeaea'),
+			get_theme_mod('content_txt_color', '#505050'),
+			get_theme_mod('desc_bg_color', '#dddddd'),
+			get_theme_mod('desc_txt_color', '#505050')
 		);
 		echo '</style>';
 	}
@@ -73,20 +117,40 @@ class Skrollr_Customize_Content_Colors {
 		$this->get_css(
 			isset($_REQUEST['bg']) ? urldecode($_REQUEST['bg']) : get_theme_mod('bg_color', '#505050'),
 			isset($_REQUEST['active']) ? urldecode($_REQUEST['active']) : get_theme_mod('bg_active_color', '#b61713'),
-			isset($_REQUEST['txt']) ? urldecode($_REQUEST['txt']) : get_theme_mod('txt_color', '#ffffff')
+			isset($_REQUEST['txt']) ? urldecode($_REQUEST['txt']) : get_theme_mod('txt_color', '#ffffff'),
+			isset($_REQUEST['content_bg']) ? urldecode($_REQUEST['content_bg']) : get_theme_mod('content_bg_color', '#eaeaea'),
+			isset($_REQUEST['content_txt']) ? urldecode($_REQUEST['content_txt']) : get_theme_mod('content_txt_color', '#505050'),
+			isset($_REQUEST['desc_bg']) ? urldecode($_REQUEST['desc_bg']) : get_theme_mod('desc_bg_color', '#dddddd'),
+			isset($_REQUEST['desc_txt']) ? urldecode($_REQUEST['desc_txt']) : get_theme_mod('desc_txt_color', '#505050')
 		);
 		die();
 	}
 
-	function get_css( $bg_color, $bg_active_color, $txt_color ) {
+	function get_css( $bg_color, $bg_active_color, $txt_color, $content_bg_color, $content_txt_color, $desc_bg_color, $desc_txt_color) {
 		$bg_color = esc_attr( $bg_color );
 		$bg_active_color = esc_attr( $bg_active_color );
 		$txt_color = esc_attr( $txt_color );
+		$content_bg_color = esc_attr( $content_bg_color );
+		$content_txt_color = esc_attr( $content_txt_color );
+		$desc_bg_color = esc_attr( $desc_bg_color );
+		$desc_txt_color = esc_attr( $desc_txt_color );
+
 		$bg_active_color_dec = Skrollr_Color_Tools::rgbhex2dec($bg_active_color);
+		$content_menu_border_color =  Skrollr_Color_Tools::darken_color($content_bg_color, 'low');
+		$content_link_hover_color =  Skrollr_Color_Tools::darken_color($content_txt_color, 'medium');
+		$content_txt_strong_color =  Skrollr_Color_Tools::darken_color($content_txt_color, 'strong');
 		?>
+			a {
+				color: <?php echo $content_txt_color ?>;
+			}
+
+			a:hover {
+				color: <?php echo $content_link_hover_color ?>;
+			}
+
 			body, .block, .one-column, footer {
-				background-color: #eaeaea;
-				color: #505050;
+				background-color: <?php echo $content_bg_color ?>;
+				color: <?php echo $content_txt_color ?>;
 			}
 
 			blockquote {
@@ -94,7 +158,12 @@ class Skrollr_Customize_Content_Colors {
 			}
 
 			blockquote > p:before, blockquote > p:after {
-				color: #505050;
+				color: <?php echo $content_txt_color ?>;
+			}
+
+			#chapo {
+				background: <?php echo $desc_bg_color ?>;
+				color: <?php echo $desc_txt_color ?>;
 			}
 
 			.text-column img.size-medium {
@@ -102,7 +171,7 @@ class Skrollr_Customize_Content_Colors {
 			}
 
 			.text-column > p strong {
-				color: black;
+				color: <?php echo $content_txt_strong_color ?>;
 			}
 
 			#main-menu {
@@ -160,7 +229,7 @@ class Skrollr_Customize_Content_Colors {
 			.post-edit-link {
 				border-color: <?php echo $bg_color ?>;
 				color: <?php echo $bg_color ?>;
-				background-color: #eaeaea;
+				background-color: <?php echo $content_bg_color ?>;
 			}
 
 			.post-edit-link:hover {
@@ -169,7 +238,11 @@ class Skrollr_Customize_Content_Colors {
 			}
 
 			.page .menu .menu-item > a {
-				border-color: #dadada;
+				border-color: <?php echo $content_menu_border_color ?>;
+			}
+
+			.wp-caption-text {
+				color: <?php echo $content_link_hover_color ?>;
 			}
 
 		<?php

@@ -119,4 +119,26 @@ class Skrollr_Color_Tools {
 			hexdec(substr($color, 5, 2))
 		);
 	}
+
+	/**
+	* Get the provided color and return a darker one with the same hue
+	*/
+	static function darken_color($color, $power='medium'){
+		$color_dec = Skrollr_Color_Tools::rgbhex2dec( $color );
+		$hsl = Skrollr_Color_Tools::rgb2hsl($color_dec[0], $color_dec[1], $color_dec[2]);
+		if( $power == 'low' ){
+			if( $hsl[2] < 0.5 ) $hsl[2] = $hsl[2] * 0.9;
+			else $hsl[2] = $hsl[2] - 0.1;
+		} else if( $power == 'medium' ){
+			if( $hsl[2] < 0.5 ) $hsl[2] = $hsl[2] * 0.5;
+			else $hsl[2] = $hsl[2] - 0.25;
+		} else if( $power == 'strong' ){
+			if( $hsl[2] < 0.5 ) $hsl[2] = $hsl[2] * 0.4;
+			else $hsl[2] = $hsl[2] - 0.4;
+		}
+		if( $hsl[2] < 0 ) $hsl[2] = 0;
+		$darker = '#'.Skrollr_Color_Tools::hsl2rgb($hsl[0], $hsl[1], $hsl[2], 'hex');
+		return $darker;
+	}
 }
+
