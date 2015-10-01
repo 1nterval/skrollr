@@ -16,7 +16,11 @@
 
 	wp.customize( 'header_image', function( value ) {
 		value.bind( function( newval ) {
-			$( '.block-0' ).css( 'background-image', 'url(' + newval + ')' );
+			if( newval == 'remove-header' ){
+				$( '.block-0' ).css( 'background-image', 'none' );
+			} else {
+				$( '.block-0' ).css( 'background-image', 'url(' + newval + ')' );
+			}
 		} );
 	} );
 

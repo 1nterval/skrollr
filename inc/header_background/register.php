@@ -30,6 +30,7 @@ class Skrollr_Customize_Header_Background {
 
 		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 		$wp_customize->get_setting( 'header_image' )->transport = 'postMessage';
+		$wp_customize->get_setting( 'header_image_data' )->transport = 'postMessage';
 	}
 
 	function add_theme_support() {
@@ -40,6 +41,7 @@ class Skrollr_Customize_Header_Background {
 			'width'             => 1500,
 			'flex-height'       => true,
 			'flex-width'        => true,
+			'default-image' => get_template_directory_uri() . '/img/magic_book_by_colgreyis.jpg',
 		) );
 		register_default_headers( array(
 			'magic_book' => array(
@@ -65,17 +67,21 @@ class Skrollr_Customize_Header_Background {
 	}
 
 	function render(){
-		?><style>
-			.block-0 {
-				background-image:url(<?php echo $this->get_header_image() ?>);
-			}
-
-			.block-0 > h1 {<?php if( !display_header_text() ) : ?>
-				display: none;
-			<?php else: ?>
-				color: #<?php echo get_header_textcolor() ?>;
-			<?php endif; ?>}
-		</style><?php
+		$style = "\n";
+		$url = $this->get_header_image();
+		if( $url ){
+			$style .= ".block-0 {
+				background-image:url($url);
+			}\n";
+		}
+		$style .= ".block-0 > h1 {\n";
+		if( !display_header_text() ){
+			$style .= "	display: none;\n";
+		} else {
+			$style .= "	color: #" . get_header_textcolor() . ";\n";
+		}
+		$style .= "}\n";
+		?><style><?php echo $style; ?></style><?php
 	}
 
 	function live_preview(){
