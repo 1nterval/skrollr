@@ -82,8 +82,8 @@ class Skrollr_Nav_Menu {
 
 	function print_assets(){
 		if( $this->is_set() || is_customize_preview() ) {
-			if(! defined('SCRIPT_DEBUG') || SCRIPT_DEBUG ) {
-				wp_enqueue_script('skrollr-sliding', get_template_directory_uri().'/inc/navmenu/sliding-menu.js', array('jquery', 'skrollr-menu'), $this->ver, true);
+			if(! defined('SCRIPT_DEBUG') || SCRIPT_DEBUG || ! file_exists(dirname(__FILE__).'/../../build/jsbuild.php')){
+				wp_enqueue_script('skrollr-sliding', get_template_directory_uri().'/inc/navmenu/sliding-menu.js', array('jquery'), $this->ver, true);
 			}
 		}
 	}
